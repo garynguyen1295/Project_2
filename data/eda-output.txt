@@ -904,3 +904,36 @@ quantiles of quant vars
 25% 21.00725 3088.00 247.25     2 41.75        11   68.75
 75% 57.47075 5872.75 437.25     4 70.00        16  863.00
 
+
+             
+
+
+
+correlation matrix among quantitative variables
+              Age   Education    Balance
+Income 0.17533840 -0.02769198 0.46365646
+Limit  0.10088792 -0.02354853 0.86169727
+Rating 0.10316500 -0.03013563 0.86362516
+Cards  0.04294829 -0.05108422 0.08645635
+
+
+ 
+
+
+relative frequency tables for qualitative Vars
+Gender
+  Male Female 
+0.4825 0.5175 
+
+Student
+ No Yes 
+0.9 0.1 
+
+Married
+    No    Yes 
+0.3875 0.6125 
+
+Ethnicity
+African American            Asian        Caucasian 
+          0.2475           0.2550           0.4975 
+
