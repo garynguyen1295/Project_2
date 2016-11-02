@@ -28,11 +28,24 @@ range_c <- apply(credit[,quants], 2, range)
 quantile_c <- apply(credit[,quants], 2, quantile, probs = c(0.25,0.75))
 
 #Make histograms and box plots or 
+
+path = '../../images/'
+
 for (index in 1:length(quants)) {
+  png(paste(path, index, '_histogram.png', sep =''))
   quant <- quants[index]
   hist(credit[,quant], main = paste('Histogram of', quant), xlab = paste(quant))
-  boxplot(credit[,quant], main = paste('Boxplot of', quant))
+  dev.off()
+  
 }
+
+for (index_1 in 1:length(quants)) {
+  png(paste(path, index_1, '_boxplot.png', sep =''))
+  quant <- quants[index_1]
+  boxplot(credit[,quant], main = paste('Boxplot of', quant))
+  dev.off()
+  
+  }
 
 
 ## Make table of frequency and relative frency for qualitative variables
@@ -94,7 +107,6 @@ print(summary(fit))
 cat("\n")
 sink()
 
-path = 
 #boxplots conditioning on different variables
 for (index in 1:length(qualitatives)) {
   png(paste(path))
