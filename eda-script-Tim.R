@@ -90,11 +90,8 @@ summary(fit)
 
 #boxplots conditioning on different variables
 for (index in 1:length(qualitatives)) {
-  qualitative <- qualitatives[index]
-  boxplot(credit$Balance~qualitative, main = paste('Boxplot of Balance 
-                                               conditional on', qualitative))
-}
-
-
-boxplot(credit$Balance~qualitative, main = paste('Boxplot of Balance 
-                                                 conditional on cred'))
+  qualitative <- credit_qualitatives[,index]
+  qualitative_colname <- qualitatives[index]
+  boxplot(credit$Balance~qualitative, main = paste('Boxplot of Balance conditional on', qualitative_colname))
+  }
+    
