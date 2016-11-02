@@ -96,29 +96,54 @@ print(Ethnicity_freq)
 cat('\n')
 sink()
 #Relative frequency tables
+
+sink("../../data/eda-output.txt", append = TRUE)
+cat("\n")
+cat('relative frequency tables for qualitative Vars\n')
 Gender_rel_freq <- prop.table(Gender_freq)
 Student_rel_freq  <- prop.table(Student_freq)
 Married_rel_freq <- prop.table(Married_freq)
 Ethnicity_rel_freq <- prop.table(Ethnicity_freq)
+print(Gender_rel_freq)
+cat("\n")
+print(Student_rel_freq)
+cat("\n")
+print(Married_rel_freq)
+cat("\n")
+print(Ethnicity_rel_freq)
+cat("\n")
+sink()
 
 # Bar charts for proportions
+png(paste(path,'Gender_barplot.png', sep =''))
 barplot(Gender_rel_freq, ylab = "proportion", main = "Relative frequency for Gender") 
+dev.off()
 
+png(paste(path,'Student_barplot.png', sep =''))
 barplot(Student_rel_freq, ylab = "proportion", main = "Relative frequency for Student" )
-barplot(Married_rel_freq, ylab = "proportion", main = "Relative frequency for Married")
-barplot(Ethnicity_rel_freq, ylab = "proportion", main = "Relative frequency for Ethnicity")
+dev.off()
 
+png(paste(path,'Married_barplot.png', sep =''))
+barplot(Married_rel_freq, ylab = "proportion", main = "Relative frequency for Married")
+dev.off()
+
+png(paste(path,'Ethnicity_barplot.png', sep =''))
+barplot(Ethnicity_rel_freq, ylab = "proportion", main = "Relative frequency for Ethnicity")
+dev.off()
 # 
 
 #. matrix of correlations among all quantitative variables.
   
   # Correlation among numeric variables in 
-   
+sink("../../data/eda-output.txt", append = TRUE)   
+cat("\n")
+cat('correlation matrix among quantitative variables\n')
 credit_quants <- credit[,-(7:10)]
 x <- credit_quants[1:4]
 y <- credit_quants[5:7]
 cor(x,y)
-
+cat("\n")
+sink()
 
 ## . scatterplot matrix. 
 png('../../images/scatterplot_matrix.png')
