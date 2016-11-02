@@ -863,3 +863,44 @@ Ethnicity
 African American            Asian        Caucasian 
               99              102              199 
 
+
+mean of quantitative vars
+    Income      Limit     Rating      Cards        Age 
+  45.21889 4735.60000  354.94000    2.95750   55.66750 
+ Education    Balance 
+  13.45000  520.01500 
+
+minimum of quantitative vars
+   Income     Limit    Rating     Cards       Age 
+   10.354   855.000    93.000     1.000    23.000 
+Education   Balance 
+    5.000     0.000 
+
+maximum of quant vars
+   Income     Limit    Rating     Cards       Age 
+  186.634 13913.000   982.000     9.000    98.000 
+Education   Balance 
+   20.000  1999.000 
+
+IQR of quant vars
+   Income     Limit    Rating     Cards       Age 
+  36.4635 2784.7500  190.0000    2.0000   28.2500 
+Education   Balance 
+   5.0000  794.2500 
+
+Standard dev of quant vars
+     Income       Limit      Rating       Cards 
+  35.244273 2308.198848  154.724143    1.371275 
+        Age   Education     Balance 
+  17.249807    3.125207  459.758877 
+
+Range of quant vars
+      Income Limit Rating Cards Age Education Balance
+[1,]  10.354   855     93     1  23         5       0
+[2,] 186.634 13913    982     9  98        20    1999
+
+quantiles of quant vars
+      Income   Limit Rating Cards   Age Education Balance
+25% 21.00725 3088.00 247.25     2 41.75        11   68.75
+75% 57.47075 5872.75 437.25     4 70.00        16  863.00
+
