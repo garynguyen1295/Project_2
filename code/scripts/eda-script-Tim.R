@@ -11,21 +11,46 @@ head(credit)
 
 # Descriptive statistics
 # Quantitative: Income, Limit, Rating, Cards, Age, Education, Balance
+sink("../../data/eda-output.txt", append = TRUE)
+cat("\n")
 quants <- c('Income', 'Limit', 'Rating', 'Cards', 'Age', 'Education', 'Balance')
+
 mean_c <- apply(credit[,quants], 2, mean)
+cat('mean of quantitative vars\n')
+print(mean_c)
+cat("\n")
 
 min_c <- apply(credit[,quants], 2, min)
+cat('minimum of quantitative vars\n')
+print(min_c)
+cat("\n")
 
 max_c <- apply(credit[,quants], 2, max)
+cat('maximum of quant vars\n')
+print(max_c)
+cat("\n")
 
 iqr_c <- apply(credit[,quants], 2, IQR)
+cat('IQR of quant vars\n')
+print(iqr_c)
+cat("\n")
 
 sd_c <- apply(credit[,quants], 2, sd)
-
+cat('Standard dev of quant vars\n')
+print(sd_c)
+cat("\n")
 
 range_c <- apply(credit[,quants], 2, range)
+cat('Range of quant vars\n')
+print(range_c)
+cat("\n")
 
 quantile_c <- apply(credit[,quants], 2, quantile, probs = c(0.25,0.75))
+cat('quantiles of quant vars\n')
+print(quantile_c)
+
+cat("\n")
+sink()
 
 #Make histograms and box plots or 
 
