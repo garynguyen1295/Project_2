@@ -51,19 +51,25 @@ for (index_1 in 1:length(quants)) {
 ## Make table of frequency and relative frency for qualitative variables
 qualitatives <- c("Gender","Student", "Married", "Ethnicity")
 
-freq_c <- apply(credit[,qualitatives],2, with)
-
-table(freq_c)
-
-data.frame(freq_c)
-with(freq_c)
-
 ## Frequency table (count)
-Gender_freq <- with(credit, table(Gender))
-Student_freq  <- with(credit, table(Student))
-Married_freq <- with(credit, table(Married)) 
-Ethnicity_freq <- with(credit, table(Ethnicity))
+sink("../../data/eda-output.txt", append = TRUE)
+cat("\n")
+cat('Frequency tables for qualitative variables\n')
 
+Gender_freq <- with(credit, table(Gender))
+print(Gender_freq)
+
+Student_freq  <- with(credit, table(Student))
+print(Student_freq)
+
+Married_freq <- with(credit, table(Married)) 
+print(Married_freq)
+
+Ethnicity_freq <- with(credit, table(Ethnicity))
+print(Ethnicity_freq)
+
+cat('\n')
+sink()
 #Relative frequency tables
 Gender_rel_freq <- prop.table(Gender_freq)
 Student_rel_freq  <- prop.table(Student_freq)
@@ -109,9 +115,10 @@ sink()
 
 #boxplots conditioning on different variables
 for (index in 1:length(qualitatives)) {
-  png(paste(path))
+  png(paste(path,index,'_conditionalBoxplots.png', sep= ''))
   qualitative <- credit_qualitatives[,index]
   qualitative_colname <- qualitatives[index]
   boxplot(credit$Balance~qualitative, main = paste('Boxplot of Balance conditional on', qualitative_colname))
+  dev.off()
   }
     
