@@ -19,4 +19,4 @@ new_credit <- cbind(temp_credit[ ,-1], Balance = raw_credit$Balance)
 scaled_credit <- scale(new_credit, center = TRUE, scale = TRUE)
 
 # writing the data set to the data directory to be used for regression
-write.csv(scaled_credit, file = "data/scaled-credit.csv")
+write.csv(scaled_credit, file = "data/scaled_credit.csv")

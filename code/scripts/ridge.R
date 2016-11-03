@@ -1,6 +1,9 @@
-credit <- read.csv('scaled-credit.csv')
-credit <- credit[-1]
-str(credit)
+# setting argument for Makefile
+args = commandArgs(trailingOnly = TRUE)
+
+# reading scaled credit data set
+scaled_credit <- read.csv(file = args[1])
+scaled_credit <- scaled_credit[-1]
 
 set.seed(400)
 random_300 <- sample(nrow(credit), 300)
