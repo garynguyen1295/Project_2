@@ -13,3 +13,11 @@ set.seed(10)
 grid <- 10^seq(10, -2, length = 100)
 ridge <- cv.glmnet(x = as.matrix(train[,-12]), y = as.double(train[,12]), intercept = FALSE, standardize = FALSE, alpha = 0, lambda = grid)
 plot(ridge)
+
+save(ridge, file = 'ridgeregressionmodels.RData')
+lambda_opt <- ridge$lambda.min
+
+png('mse-lamda-ridge.png')
+plot(ridge)
+abline(v = lambda_opt)
+dev.off()
