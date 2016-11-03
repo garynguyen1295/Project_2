@@ -58,5 +58,3 @@ print(ridge_mse)
 cat('\nOfficial coefficients for the optimal model\n')
 print(best_ridge_coef)
 sink()
-
-
