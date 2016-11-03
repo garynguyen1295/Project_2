@@ -42,6 +42,7 @@ plsr:
 slides:
 
 session:
+	Rscript code/scripts/session-info-script.R
 
 clean:
 
