@@ -1,0 +1,20 @@
+Best lambda for ridge regression
+[1] 0.01
+
+Test mean squared error using the best lambda
+[1] 0.0440417
+
+Official coefficients for the optimal model
+         Coefficients       Values
+1         (Intercept)  0.000000000
+2              Income -0.568706769
+3               Limit  0.718657903
+4              Rating  0.593058827
+5               Cards  0.044252756
+6                 Age -0.025384931
+7           Education -0.005879651
+8        GenderFemale -0.010677773
+9          StudentYes  0.273184181
+10         MarriedYes -0.011027761
+11     EthnicityAsian  0.016378729
+12 EthnicityCaucasian  0.011011789
