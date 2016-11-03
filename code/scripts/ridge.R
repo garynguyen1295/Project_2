@@ -50,7 +50,7 @@ coef_values <- c(0,coef_values)
 best_ridge_coef <- data.frame('Coefficients' = coef_names, 'Values' = coef_values)
 
 # outputting the best lambda, mse, and coefficients to a textfile
-sink('data/ridge-output.txt')
+sink('data/ridge_output.txt')
 cat('Best lambda for ridge regression\n')
 print(best_lambda)
 cat('\nTest mean squared error using the best lambda\n')

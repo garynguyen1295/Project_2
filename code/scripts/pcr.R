@@ -39,7 +39,7 @@ best_pcr <- pcr(Balance ~ ., data = scaled_credit, ncomp = index)
 best_pcr_coef <- coef(best_pcr)
 
 # outputting the best # of pc, mse, and coefficients to a textfile
-sink('data/pcr-output.txt')
+sink('data/pcr_output.txt')
 cat('Optimal number of principal components\n')
 print(index)
 cat('\nTest mean squared error for PCR\n')
