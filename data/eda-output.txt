@@ -1,0 +1,939 @@
+    Gender Student Married        Ethnicity
+1     Male      No     Yes        Caucasian
+2   Female     Yes     Yes            Asian
+3     Male      No      No            Asian
+4   Female      No      No            Asian
+5     Male      No     Yes        Caucasian
+6     Male      No      No        Caucasian
+7   Female      No      No African American
+8     Male      No      No            Asian
+9   Female      No      No        Caucasian
+10  Female     Yes     Yes African American
+11    Male      No     Yes        Caucasian
+12    Male      No      No        Caucasian
+13  Female      No     Yes            Asian
+14    Male      No     Yes        Caucasian
+15  Female      No      No African American
+16  Female      No     Yes African American
+17  Female      No     Yes African American
+18  Female      No     Yes            Asian
+19  Female      No     Yes            Asian
+20    Male      No      No            Asian
+21  Female      No      No            Asian
+22  Female      No      No        Caucasian
+23    Male      No     Yes African American
+24    Male      No     Yes African American
+25  Female      No      No        Caucasian
+26  Female      No     Yes African American
+27  Female     Yes      No        Caucasian
+28    Male      No      No African American
+29  Female      No     Yes African American
+30  Female      No      No        Caucasian
+31  Female      No     Yes        Caucasian
+32    Male      No     Yes            Asian
+33  Female      No      No        Caucasian
+34    Male      No     Yes        Caucasian
+35  Female      No     Yes            Asian
+36  Female     Yes      No        Caucasian
+37  Female      No     Yes        Caucasian
+38  Female      No     Yes        Caucasian
+39  Female      No      No        Caucasian
+40    Male      No     Yes        Caucasian
+41  Female      No      No African American
+42    Male     Yes     Yes African American
+43  Female      No     Yes            Asian
+44  Female      No     Yes            Asian
+45  Female      No     Yes        Caucasian
+46  Female      No     Yes        Caucasian
+47  Female     Yes     Yes            Asian
+48    Male     Yes     Yes        Caucasian
+49    Male      No     Yes            Asian
+50    Male     Yes     Yes African American
+51    Male      No     Yes African American
+52    Male      No     Yes African American
+53    Male      No     Yes        Caucasian
+54    Male      No     Yes            Asian
+55  Female      No     Yes            Asian
+56  Female      No     Yes            Asian
+57  Female      No     Yes            Asian
+58  Female      No     Yes        Caucasian
+59    Male      No     Yes        Caucasian
+60  Female      No      No        Caucasian
+61  Female      No      No            Asian
+62  Female      No      No        Caucasian
+63  Female      No      No        Caucasian
+64    Male      No      No        Caucasian
+65  Female      No     Yes African American
+66  Female      No     Yes        Caucasian
+67  Female      No     Yes            Asian
+68  Female      No      No African American
+69  Female      No     Yes        Caucasian
+70    Male      No     Yes        Caucasian
+71    Male      No     Yes        Caucasian
+72  Female      No     Yes            Asian
+73  Female      No     Yes            Asian
+74    Male      No      No        Caucasian
+75  Female      No     Yes        Caucasian
+76    Male      No     Yes African American
+77    Male     Yes      No        Caucasian
+78  Female      No      No            Asian
+79  Female      No     Yes        Caucasian
+80    Male      No      No            Asian
+81  Female      No     Yes        Caucasian
+82    Male      No      No        Caucasian
+83    Male      No      No        Caucasian
+84  Female      No      No        Caucasian
+85    Male      No      No        Caucasian
+86  Female      No     Yes            Asian
+87    Male      No     Yes        Caucasian
+88  Female      No      No            Asian
+89    Male      No     Yes African American
+90  Female      No      No African American
+91    Male      No     Yes African American
+92    Male      No     Yes        Caucasian
+93    Male      No      No        Caucasian
+94    Male      No      No African American
+95  Female      No      No African American
+96  Female      No     Yes African American
+97    Male     Yes      No            Asian
+98  Female      No     Yes African American
+99  Female     Yes      No African American
+100   Male      No      No        Caucasian
+101   Male      No      No        Caucasian
+102 Female     Yes      No        Caucasian
+103   Male     Yes      No        Caucasian
+104   Male      No      No        Caucasian
+105 Female      No      No        Caucasian
+106 Female      No     Yes        Caucasian
+107   Male      No     Yes            Asian
+108   Male      No      No            Asian
+109   Male      No     Yes        Caucasian
+110   Male      No     Yes            Asian
+111 Female      No     Yes            Asian
+112 Female      No      No African American
+113   Male      No     Yes        Caucasian
+114 Female      No     Yes            Asian
+115   Male      No      No        Caucasian
+116 Female      No      No African American
+117 Female      No      No        Caucasian
+118   Male      No     Yes            Asian
+119 Female      No      No        Caucasian
+120   Male      No      No        Caucasian
+121 Female      No     Yes            Asian
+122   Male      No     Yes        Caucasian
+123 Female      No      No        Caucasian
+124 Female      No      No African American
+125 Female      No     Yes        Caucasian
+126 Female      No     Yes        Caucasian
+127 Female     Yes     Yes            Asian
+128 Female      No      No        Caucasian
+129   Male     Yes      No African American
+130   Male      No     Yes African American
+131 Female     Yes     Yes African American
+132   Male      No     Yes            Asian
+133   Male      No     Yes African American
+134 Female      No     Yes African American
+135 Female      No     Yes African American
+136 Female      No      No African American
+137 Female      No      No African American
+138   Male      No     Yes            Asian
+139 Female      No     Yes        Caucasian
+140   Male      No      No African American
+141 Female     Yes     Yes African American
+142   Male      No     Yes        Caucasian
+143   Male      No      No            Asian
+144 Female      No      No African American
+145   Male      No     Yes        Caucasian
+146   Male      No      No            Asian
+147 Female      No     Yes        Caucasian
+148   Male      No     Yes        Caucasian
+149 Female      No     Yes        Caucasian
+150   Male      No     Yes            Asian
+151 Female      No     Yes African American
+152 Female      No     Yes        Caucasian
+153 Female     Yes      No        Caucasian
+154   Male      No      No        Caucasian
+155   Male      No     Yes African American
+156 Female      No     Yes            Asian
+157 Female      No     Yes        Caucasian
+158 Female     Yes     Yes        Caucasian
+159 Female      No     Yes            Asian
+160   Male      No      No            Asian
+161 Female      No      No        Caucasian
+162   Male      No     Yes        Caucasian
+163   Male      No     Yes        Caucasian
+164 Female      No      No African American
+165   Male      No     Yes            Asian
+166   Male      No     Yes        Caucasian
+167   Male      No      No African American
+168 Female      No     Yes        Caucasian
+169 Female      No     Yes            Asian
+170 Female      No     Yes        Caucasian
+171   Male      No      No            Asian
+172 Female      No     Yes        Caucasian
+173   Male      No      No            Asian
+174   Male      No     Yes African American
+175   Male      No      No African American
+176   Male      No      No        Caucasian
+177   Male      No     Yes        Caucasian
+178 Female      No     Yes            Asian
+179 Female      No      No        Caucasian
+180 Female      No      No        Caucasian
+181   Male      No     Yes            Asian
+182   Male      No     Yes African American
+183 Female      No     Yes African American
+184 Female      No     Yes            Asian
+185 Female      No     Yes        Caucasian
+186 Female      No      No African American
+187   Male      No      No African American
+188   Male      No      No            Asian
+189   Male      No      No African American
+190 Female      No     Yes        Caucasian
+191 Female      No     Yes        Caucasian
+192 Female     Yes      No            Asian
+193   Male      No     Yes            Asian
+194 Female      No     Yes        Caucasian
+195   Male      No     Yes African American
+196 Female      No     Yes African American
+197   Male      No     Yes African American
+198 Female      No      No African American
+199 Female      No     Yes African American
+200   Male      No     Yes            Asian
+201   Male      No     Yes African American
+202 Female      No     Yes        Caucasian
+203 Female      No     Yes        Caucasian
+204 Female     Yes      No African American
+205 Female      No      No        Caucasian
+206   Male      No      No        Caucasian
+207   Male      No      No        Caucasian
+208 Female     Yes     Yes        Caucasian
+209   Male      No      No African American
+210 Female      No     Yes African American
+211 Female      No     Yes        Caucasian
+212   Male      No      No        Caucasian
+213   Male      No     Yes        Caucasian
+214   Male      No      No African American
+215 Female      No     Yes        Caucasian
+216 Female      No     Yes        Caucasian
+217   Male      No      No            Asian
+218   Male      No     Yes        Caucasian
+219 Female     Yes     Yes            Asian
+220 Female      No      No        Caucasian
+221 Female     Yes      No            Asian
+222 Female      No      No African American
+223   Male     Yes      No        Caucasian
+224   Male      No     Yes            Asian
+225   Male      No     Yes        Caucasian
+226 Female      No     Yes            Asian
+227 Female      No      No        Caucasian
+228 Female      No     Yes        Caucasian
+229 Female      No      No African American
+230   Male      No     Yes            Asian
+231   Male      No      No African American
+232   Male      No     Yes        Caucasian
+233   Male      No     Yes            Asian
+234   Male      No     Yes        Caucasian
+235   Male      No     Yes African American
+236 Female      No     Yes African American
+237   Male      No     Yes            Asian
+238   Male      No     Yes            Asian
+239 Female      No     Yes        Caucasian
+240 Female      No     Yes            Asian
+241 Female      No     Yes            Asian
+242   Male      No     Yes African American
+243 Female     Yes     Yes            Asian
+244 Female      No     Yes        Caucasian
+245 Female      No      No        Caucasian
+246 Female      No     Yes African American
+247 Female      No      No            Asian
+248   Male      No      No        Caucasian
+249   Male     Yes     Yes        Caucasian
+250 Female     Yes     Yes        Caucasian
+251 Female      No     Yes            Asian
+252   Male      No     Yes        Caucasian
+253 Female      No      No        Caucasian
+254   Male      No     Yes African American
+255 Female      No     Yes        Caucasian
+256   Male      No      No African American
+257 Female      No      No            Asian
+258   Male      No     Yes            Asian
+259   Male      No     Yes        Caucasian
+260 Female      No      No        Caucasian
+261   Male      No     Yes            Asian
+262 Female     Yes     Yes            Asian
+263 Female      No     Yes        Caucasian
+264 Female      No      No African American
+265   Male      No     Yes        Caucasian
+266 Female      No     Yes African American
+267 Female      No     Yes        Caucasian
+268 Female      No     Yes            Asian
+269   Male      No      No        Caucasian
+270 Female      No     Yes        Caucasian
+271   Male      No      No        Caucasian
+272 Female      No      No        Caucasian
+273 Female     Yes      No            Asian
+274   Male     Yes      No            Asian
+275 Female      No      No African American
+276   Male      No     Yes        Caucasian
+277 Female      No      No        Caucasian
+278   Male      No     Yes        Caucasian
+279 Female      No     Yes        Caucasian
+280 Female     Yes      No        Caucasian
+281 Female      No      No African American
+282 Female      No      No African American
+283 Female      No     Yes        Caucasian
+284 Female      No     Yes        Caucasian
+285   Male      No     Yes        Caucasian
+286 Female      No     Yes            Asian
+287 Female      No      No        Caucasian
+288   Male      No     Yes        Caucasian
+289 Female      No     Yes            Asian
+290   Male      No      No        Caucasian
+291   Male      No     Yes            Asian
+292 Female      No     Yes        Caucasian
+293   Male      No     Yes        Caucasian
+294   Male      No     Yes African American
+295   Male      No     Yes            Asian
+296 Female      No     Yes        Caucasian
+297 Female      No     Yes        Caucasian
+298   Male      No     Yes            Asian
+299 Female      No      No African American
+300 Female      No     Yes African American
+301   Male      No     Yes        Caucasian
+302 Female      No      No        Caucasian
+303 Female      No     Yes        Caucasian
+304   Male      No     Yes African American
+305 Female      No     Yes            Asian
+306 Female      No     Yes            Asian
+307   Male      No     Yes        Caucasian
+308 Female      No     Yes            Asian
+309   Male      No      No            Asian
+310 Female      No     Yes        Caucasian
+311   Male     Yes      No African American
+312 Female      No     Yes        Caucasian
+313   Male      No     Yes        Caucasian
+314 Female      No     Yes            Asian
+315   Male      No      No African American
+316   Male      No     Yes        Caucasian
+317   Male      No      No            Asian
+318   Male      No     Yes        Caucasian
+319 Female      No      No        Caucasian
+320   Male      No     Yes African American
+321   Male     Yes     Yes African American
+322 Female      No     Yes        Caucasian
+323   Male      No      No        Caucasian
+324   Male      No     Yes        Caucasian
+325   Male     Yes     Yes            Asian
+326 Female      No     Yes        Caucasian
+327   Male      No     Yes        Caucasian
+328 Female      No      No            Asian
+329 Female      No     Yes        Caucasian
+330 Female      No     Yes        Caucasian
+331   Male     Yes      No            Asian
+332   Male      No     Yes        Caucasian
+333   Male      No      No        Caucasian
+334   Male      No     Yes African American
+335 Female      No     Yes        Caucasian
+336 Female      No     Yes        Caucasian
+337   Male      No      No        Caucasian
+338   Male      No     Yes African American
+339   Male      No      No        Caucasian
+340   Male      No      No African American
+341 Female      No     Yes African American
+342 Female      No     Yes        Caucasian
+343   Male      No     Yes African American
+344 Female      No     Yes        Caucasian
+345   Male      No     Yes            Asian
+346   Male      No     Yes        Caucasian
+347   Male      No     Yes            Asian
+348   Male      No      No        Caucasian
+349   Male      No     Yes        Caucasian
+350 Female      No     Yes            Asian
+351 Female      No     Yes        Caucasian
+352   Male      No     Yes        Caucasian
+353   Male      No     Yes African American
+354   Male      No      No        Caucasian
+355 Female      No     Yes            Asian
+356 Female      No     Yes African American
+357   Male      No      No        Caucasian
+358   Male      No     Yes            Asian
+359   Male      No     Yes        Caucasian
+360   Male      No     Yes African American
+361 Female      No      No        Caucasian
+362 Female      No     Yes            Asian
+363 Female      No      No African American
+364   Male      No     Yes        Caucasian
+365   Male      No     Yes            Asian
+366   Male     Yes     Yes        Caucasian
+367   Male      No     Yes        Caucasian
+368   Male      No      No African American
+369 Female      No      No        Caucasian
+370   Male      No     Yes        Caucasian
+371   Male      No      No        Caucasian
+372   Male      No      No        Caucasian
+373 Female     Yes      No        Caucasian
+374 Female     Yes     Yes        Caucasian
+375 Female      No     Yes        Caucasian
+376 Female      No     Yes        Caucasian
+377 Female      No      No African American
+378   Male      No     Yes        Caucasian
+379   Male      No     Yes        Caucasian
+380   Male      No     Yes        Caucasian
+381 Female      No      No African American
+382   Male      No     Yes        Caucasian
+383   Male     Yes      No        Caucasian
+384   Male      No     Yes        Caucasian
+385   Male      No      No African American
+386 Female      No      No            Asian
+387   Male      No      No African American
+388   Male      No      No            Asian
+389 Female      No      No        Caucasian
+390   Male      No      No        Caucasian
+391 Female      No     Yes            Asian
+392 Female      No      No        Caucasian
+393   Male      No      No            Asian
+394   Male      No      No African American
+395   Male      No      No        Caucasian
+396   Male      No     Yes        Caucasian
+397   Male      No      No African American
+398 Female      No     Yes        Caucasian
+399   Male      No     Yes        Caucasian
+400 Female      No      No            Asian
+                               Df   Sum Sq
+credit_qualitatives$Gender      1    38892
+credit_qualitatives$Student     1  5623889
+credit_qualitatives$Married     1    16976
+credit_qualitatives$Ethnicity   2    58038
+Residuals                     394 78602117
+                              Mean Sq F value
+credit_qualitatives$Gender      38892   0.195
+credit_qualitatives$Student   5623889  28.190
+credit_qualitatives$Married     16976   0.085
+credit_qualitatives$Ethnicity   29019   0.145
+Residuals                      199498        
+                                Pr(>F)    
+credit_qualitatives$Gender       0.659    
+credit_qualitatives$Student   1.84e-07 ***
+credit_qualitatives$Married      0.771    
+credit_qualitatives$Ethnicity    0.865    
+Residuals                                 
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+    Gender Student Married        Ethnicity
+1     Male      No     Yes        Caucasian
+2   Female     Yes     Yes            Asian
+3     Male      No      No            Asian
+4   Female      No      No            Asian
+5     Male      No     Yes        Caucasian
+6     Male      No      No        Caucasian
+7   Female      No      No African American
+8     Male      No      No            Asian
+9   Female      No      No        Caucasian
+10  Female     Yes     Yes African American
+11    Male      No     Yes        Caucasian
+12    Male      No      No        Caucasian
+13  Female      No     Yes            Asian
+14    Male      No     Yes        Caucasian
+15  Female      No      No African American
+16  Female      No     Yes African American
+17  Female      No     Yes African American
+18  Female      No     Yes            Asian
+19  Female      No     Yes            Asian
+20    Male      No      No            Asian
+21  Female      No      No            Asian
+22  Female      No      No        Caucasian
+23    Male      No     Yes African American
+24    Male      No     Yes African American
+25  Female      No      No        Caucasian
+26  Female      No     Yes African American
+27  Female     Yes      No        Caucasian
+28    Male      No      No African American
+29  Female      No     Yes African American
+30  Female      No      No        Caucasian
+31  Female      No     Yes        Caucasian
+32    Male      No     Yes            Asian
+33  Female      No      No        Caucasian
+34    Male      No     Yes        Caucasian
+35  Female      No     Yes            Asian
+36  Female     Yes      No        Caucasian
+37  Female      No     Yes        Caucasian
+38  Female      No     Yes        Caucasian
+39  Female      No      No        Caucasian
+40    Male      No     Yes        Caucasian
+41  Female      No      No African American
+42    Male     Yes     Yes African American
+43  Female      No     Yes            Asian
+44  Female      No     Yes            Asian
+45  Female      No     Yes        Caucasian
+46  Female      No     Yes        Caucasian
+47  Female     Yes     Yes            Asian
+48    Male     Yes     Yes        Caucasian
+49    Male      No     Yes            Asian
+50    Male     Yes     Yes African American
+51    Male      No     Yes African American
+52    Male      No     Yes African American
+53    Male      No     Yes        Caucasian
+54    Male      No     Yes            Asian
+55  Female      No     Yes            Asian
+56  Female      No     Yes            Asian
+57  Female      No     Yes            Asian
+58  Female      No     Yes        Caucasian
+59    Male      No     Yes        Caucasian
+60  Female      No      No        Caucasian
+61  Female      No      No            Asian
+62  Female      No      No        Caucasian
+63  Female      No      No        Caucasian
+64    Male      No      No        Caucasian
+65  Female      No     Yes African American
+66  Female      No     Yes        Caucasian
+67  Female      No     Yes            Asian
+68  Female      No      No African American
+69  Female      No     Yes        Caucasian
+70    Male      No     Yes        Caucasian
+71    Male      No     Yes        Caucasian
+72  Female      No     Yes            Asian
+73  Female      No     Yes            Asian
+74    Male      No      No        Caucasian
+75  Female      No     Yes        Caucasian
+76    Male      No     Yes African American
+77    Male     Yes      No        Caucasian
+78  Female      No      No            Asian
+79  Female      No     Yes        Caucasian
+80    Male      No      No            Asian
+81  Female      No     Yes        Caucasian
+82    Male      No      No        Caucasian
+83    Male      No      No        Caucasian
+84  Female      No      No        Caucasian
+85    Male      No      No        Caucasian
+86  Female      No     Yes            Asian
+87    Male      No     Yes        Caucasian
+88  Female      No      No            Asian
+89    Male      No     Yes African American
+90  Female      No      No African American
+91    Male      No     Yes African American
+92    Male      No     Yes        Caucasian
+93    Male      No      No        Caucasian
+94    Male      No      No African American
+95  Female      No      No African American
+96  Female      No     Yes African American
+97    Male     Yes      No            Asian
+98  Female      No     Yes African American
+99  Female     Yes      No African American
+100   Male      No      No        Caucasian
+101   Male      No      No        Caucasian
+102 Female     Yes      No        Caucasian
+103   Male     Yes      No        Caucasian
+104   Male      No      No        Caucasian
+105 Female      No      No        Caucasian
+106 Female      No     Yes        Caucasian
+107   Male      No     Yes            Asian
+108   Male      No      No            Asian
+109   Male      No     Yes        Caucasian
+110   Male      No     Yes            Asian
+111 Female      No     Yes            Asian
+112 Female      No      No African American
+113   Male      No     Yes        Caucasian
+114 Female      No     Yes            Asian
+115   Male      No      No        Caucasian
+116 Female      No      No African American
+117 Female      No      No        Caucasian
+118   Male      No     Yes            Asian
+119 Female      No      No        Caucasian
+120   Male      No      No        Caucasian
+121 Female      No     Yes            Asian
+122   Male      No     Yes        Caucasian
+123 Female      No      No        Caucasian
+124 Female      No      No African American
+125 Female      No     Yes        Caucasian
+126 Female      No     Yes        Caucasian
+127 Female     Yes     Yes            Asian
+128 Female      No      No        Caucasian
+129   Male     Yes      No African American
+130   Male      No     Yes African American
+131 Female     Yes     Yes African American
+132   Male      No     Yes            Asian
+133   Male      No     Yes African American
+134 Female      No     Yes African American
+135 Female      No     Yes African American
+136 Female      No      No African American
+137 Female      No      No African American
+138   Male      No     Yes            Asian
+139 Female      No     Yes        Caucasian
+140   Male      No      No African American
+141 Female     Yes     Yes African American
+142   Male      No     Yes        Caucasian
+143   Male      No      No            Asian
+144 Female      No      No African American
+145   Male      No     Yes        Caucasian
+146   Male      No      No            Asian
+147 Female      No     Yes        Caucasian
+148   Male      No     Yes        Caucasian
+149 Female      No     Yes        Caucasian
+150   Male      No     Yes            Asian
+151 Female      No     Yes African American
+152 Female      No     Yes        Caucasian
+153 Female     Yes      No        Caucasian
+154   Male      No      No        Caucasian
+155   Male      No     Yes African American
+156 Female      No     Yes            Asian
+157 Female      No     Yes        Caucasian
+158 Female     Yes     Yes        Caucasian
+159 Female      No     Yes            Asian
+160   Male      No      No            Asian
+161 Female      No      No        Caucasian
+162   Male      No     Yes        Caucasian
+163   Male      No     Yes        Caucasian
+164 Female      No      No African American
+165   Male      No     Yes            Asian
+166   Male      No     Yes        Caucasian
+167   Male      No      No African American
+168 Female      No     Yes        Caucasian
+169 Female      No     Yes            Asian
+170 Female      No     Yes        Caucasian
+171   Male      No      No            Asian
+172 Female      No     Yes        Caucasian
+173   Male      No      No            Asian
+174   Male      No     Yes African American
+175   Male      No      No African American
+176   Male      No      No        Caucasian
+177   Male      No     Yes        Caucasian
+178 Female      No     Yes            Asian
+179 Female      No      No        Caucasian
+180 Female      No      No        Caucasian
+181   Male      No     Yes            Asian
+182   Male      No     Yes African American
+183 Female      No     Yes African American
+184 Female      No     Yes            Asian
+185 Female      No     Yes        Caucasian
+186 Female      No      No African American
+187   Male      No      No African American
+188   Male      No      No            Asian
+189   Male      No      No African American
+190 Female      No     Yes        Caucasian
+191 Female      No     Yes        Caucasian
+192 Female     Yes      No            Asian
+193   Male      No     Yes            Asian
+194 Female      No     Yes        Caucasian
+195   Male      No     Yes African American
+196 Female      No     Yes African American
+197   Male      No     Yes African American
+198 Female      No      No African American
+199 Female      No     Yes African American
+200   Male      No     Yes            Asian
+201   Male      No     Yes African American
+202 Female      No     Yes        Caucasian
+203 Female      No     Yes        Caucasian
+204 Female     Yes      No African American
+205 Female      No      No        Caucasian
+206   Male      No      No        Caucasian
+207   Male      No      No        Caucasian
+208 Female     Yes     Yes        Caucasian
+209   Male      No      No African American
+210 Female      No     Yes African American
+211 Female      No     Yes        Caucasian
+212   Male      No      No        Caucasian
+213   Male      No     Yes        Caucasian
+214   Male      No      No African American
+215 Female      No     Yes        Caucasian
+216 Female      No     Yes        Caucasian
+217   Male      No      No            Asian
+218   Male      No     Yes        Caucasian
+219 Female     Yes     Yes            Asian
+220 Female      No      No        Caucasian
+221 Female     Yes      No            Asian
+222 Female      No      No African American
+223   Male     Yes      No        Caucasian
+224   Male      No     Yes            Asian
+225   Male      No     Yes        Caucasian
+226 Female      No     Yes            Asian
+227 Female      No      No        Caucasian
+228 Female      No     Yes        Caucasian
+229 Female      No      No African American
+230   Male      No     Yes            Asian
+231   Male      No      No African American
+232   Male      No     Yes        Caucasian
+233   Male      No     Yes            Asian
+234   Male      No     Yes        Caucasian
+235   Male      No     Yes African American
+236 Female      No     Yes African American
+237   Male      No     Yes            Asian
+238   Male      No     Yes            Asian
+239 Female      No     Yes        Caucasian
+240 Female      No     Yes            Asian
+241 Female      No     Yes            Asian
+242   Male      No     Yes African American
+243 Female     Yes     Yes            Asian
+244 Female      No     Yes        Caucasian
+245 Female      No      No        Caucasian
+246 Female      No     Yes African American
+247 Female      No      No            Asian
+248   Male      No      No        Caucasian
+249   Male     Yes     Yes        Caucasian
+250 Female     Yes     Yes        Caucasian
+251 Female      No     Yes            Asian
+252   Male      No     Yes        Caucasian
+253 Female      No      No        Caucasian
+254   Male      No     Yes African American
+255 Female      No     Yes        Caucasian
+256   Male      No      No African American
+257 Female      No      No            Asian
+258   Male      No     Yes            Asian
+259   Male      No     Yes        Caucasian
+260 Female      No      No        Caucasian
+261   Male      No     Yes            Asian
+262 Female     Yes     Yes            Asian
+263 Female      No     Yes        Caucasian
+264 Female      No      No African American
+265   Male      No     Yes        Caucasian
+266 Female      No     Yes African American
+267 Female      No     Yes        Caucasian
+268 Female      No     Yes            Asian
+269   Male      No      No        Caucasian
+270 Female      No     Yes        Caucasian
+271   Male      No      No        Caucasian
+272 Female      No      No        Caucasian
+273 Female     Yes      No            Asian
+274   Male     Yes      No            Asian
+275 Female      No      No African American
+276   Male      No     Yes        Caucasian
+277 Female      No      No        Caucasian
+278   Male      No     Yes        Caucasian
+279 Female      No     Yes        Caucasian
+280 Female     Yes      No        Caucasian
+281 Female      No      No African American
+282 Female      No      No African American
+283 Female      No     Yes        Caucasian
+284 Female      No     Yes        Caucasian
+285   Male      No     Yes        Caucasian
+286 Female      No     Yes            Asian
+287 Female      No      No        Caucasian
+288   Male      No     Yes        Caucasian
+289 Female      No     Yes            Asian
+290   Male      No      No        Caucasian
+291   Male      No     Yes            Asian
+292 Female      No     Yes        Caucasian
+293   Male      No     Yes        Caucasian
+294   Male      No     Yes African American
+295   Male      No     Yes            Asian
+296 Female      No     Yes        Caucasian
+297 Female      No     Yes        Caucasian
+298   Male      No     Yes            Asian
+299 Female      No      No African American
+300 Female      No     Yes African American
+301   Male      No     Yes        Caucasian
+302 Female      No      No        Caucasian
+303 Female      No     Yes        Caucasian
+304   Male      No     Yes African American
+305 Female      No     Yes            Asian
+306 Female      No     Yes            Asian
+307   Male      No     Yes        Caucasian
+308 Female      No     Yes            Asian
+309   Male      No      No            Asian
+310 Female      No     Yes        Caucasian
+311   Male     Yes      No African American
+312 Female      No     Yes        Caucasian
+313   Male      No     Yes        Caucasian
+314 Female      No     Yes            Asian
+315   Male      No      No African American
+316   Male      No     Yes        Caucasian
+317   Male      No      No            Asian
+318   Male      No     Yes        Caucasian
+319 Female      No      No        Caucasian
+320   Male      No     Yes African American
+321   Male     Yes     Yes African American
+322 Female      No     Yes        Caucasian
+323   Male      No      No        Caucasian
+324   Male      No     Yes        Caucasian
+325   Male     Yes     Yes            Asian
+326 Female      No     Yes        Caucasian
+327   Male      No     Yes        Caucasian
+328 Female      No      No            Asian
+329 Female      No     Yes        Caucasian
+330 Female      No     Yes        Caucasian
+331   Male     Yes      No            Asian
+332   Male      No     Yes        Caucasian
+333   Male      No      No        Caucasian
+334   Male      No     Yes African American
+335 Female      No     Yes        Caucasian
+336 Female      No     Yes        Caucasian
+337   Male      No      No        Caucasian
+338   Male      No     Yes African American
+339   Male      No      No        Caucasian
+340   Male      No      No African American
+341 Female      No     Yes African American
+342 Female      No     Yes        Caucasian
+343   Male      No     Yes African American
+344 Female      No     Yes        Caucasian
+345   Male      No     Yes            Asian
+346   Male      No     Yes        Caucasian
+347   Male      No     Yes            Asian
+348   Male      No      No        Caucasian
+349   Male      No     Yes        Caucasian
+350 Female      No     Yes            Asian
+351 Female      No     Yes        Caucasian
+352   Male      No     Yes        Caucasian
+353   Male      No     Yes African American
+354   Male      No      No        Caucasian
+355 Female      No     Yes            Asian
+356 Female      No     Yes African American
+357   Male      No      No        Caucasian
+358   Male      No     Yes            Asian
+359   Male      No     Yes        Caucasian
+360   Male      No     Yes African American
+361 Female      No      No        Caucasian
+362 Female      No     Yes            Asian
+363 Female      No      No African American
+364   Male      No     Yes        Caucasian
+365   Male      No     Yes            Asian
+366   Male     Yes     Yes        Caucasian
+367   Male      No     Yes        Caucasian
+368   Male      No      No African American
+369 Female      No      No        Caucasian
+370   Male      No     Yes        Caucasian
+371   Male      No      No        Caucasian
+372   Male      No      No        Caucasian
+373 Female     Yes      No        Caucasian
+374 Female     Yes     Yes        Caucasian
+375 Female      No     Yes        Caucasian
+376 Female      No     Yes        Caucasian
+377 Female      No      No African American
+378   Male      No     Yes        Caucasian
+379   Male      No     Yes        Caucasian
+380   Male      No     Yes        Caucasian
+381 Female      No      No African American
+382   Male      No     Yes        Caucasian
+383   Male     Yes      No        Caucasian
+384   Male      No     Yes        Caucasian
+385   Male      No      No African American
+386 Female      No      No            Asian
+387   Male      No      No African American
+388   Male      No      No            Asian
+389 Female      No      No        Caucasian
+390   Male      No      No        Caucasian
+391 Female      No     Yes            Asian
+392 Female      No      No        Caucasian
+393   Male      No      No            Asian
+394   Male      No      No African American
+395   Male      No      No        Caucasian
+396   Male      No     Yes        Caucasian
+397   Male      No      No African American
+398 Female      No     Yes        Caucasian
+399   Male      No     Yes        Caucasian
+400 Female      No      No            Asian
+                               Df   Sum Sq
+credit_qualitatives$Gender      1    38892
+credit_qualitatives$Student     1  5623889
+credit_qualitatives$Married     1    16976
+credit_qualitatives$Ethnicity   2    58038
+Residuals                     394 78602117
+                              Mean Sq F value
+credit_qualitatives$Gender      38892   0.195
+credit_qualitatives$Student   5623889  28.190
+credit_qualitatives$Married     16976   0.085
+credit_qualitatives$Ethnicity   29019   0.145
+Residuals                      199498        
+                                Pr(>F)    
+credit_qualitatives$Gender       0.659    
+credit_qualitatives$Student   1.84e-07 ***
+credit_qualitatives$Married      0.771    
+credit_qualitatives$Ethnicity    0.865    
+Residuals                                 
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Frequency tables for qualitative variables
+Gender
+  Male Female 
+   193    207 
+
+Student
+ No Yes 
+360  40 
+
+Married
+ No Yes 
+155 245 
+
+Ethnicity
+African American            Asian        Caucasian 
+              99              102              199 
+
+
+mean of quantitative vars
+    Income      Limit     Rating      Cards        Age 
+  45.21889 4735.60000  354.94000    2.95750   55.66750 
+ Education    Balance 
+  13.45000  520.01500 
+
+minimum of quantitative vars
+   Income     Limit    Rating     Cards       Age 
+   10.354   855.000    93.000     1.000    23.000 
+Education   Balance 
+    5.000     0.000 
+
+maximum of quant vars
+   Income     Limit    Rating     Cards       Age 
+  186.634 13913.000   982.000     9.000    98.000 
+Education   Balance 
+   20.000  1999.000 
+
+IQR of quant vars
+   Income     Limit    Rating     Cards       Age 
+  36.4635 2784.7500  190.0000    2.0000   28.2500 
+Education   Balance 
+   5.0000  794.2500 
+
+Standard dev of quant vars
+     Income       Limit      Rating       Cards 
+  35.244273 2308.198848  154.724143    1.371275 
+        Age   Education     Balance 
+  17.249807    3.125207  459.758877 
+
+Range of quant vars
+      Income Limit Rating Cards Age Education Balance
+[1,]  10.354   855     93     1  23         5       0
+[2,] 186.634 13913    982     9  98        20    1999
+
+quantiles of quant vars
+      Income   Limit Rating Cards   Age Education Balance
+25% 21.00725 3088.00 247.25     2 41.75        11   68.75
+75% 57.47075 5872.75 437.25     4 70.00        16  863.00
+
+
+             
+
+
+
+correlation matrix among quantitative variables
+              Age   Education    Balance
+Income 0.17533840 -0.02769198 0.46365646
+Limit  0.10088792 -0.02354853 0.86169727
+Rating 0.10316500 -0.03013563 0.86362516
+Cards  0.04294829 -0.05108422 0.08645635
+
+
+ 
+
+
+relative frequency tables for qualitative Vars
+Gender
+  Male Female 
+0.4825 0.5175 
+
+Student
+ No Yes 
+0.9 0.1 
+
+Married
+    No    Yes 
+0.3875 0.6125 
+
+Ethnicity
+African American            Asian        Caucasian 
+          0.2475           0.2550           0.4975 
+
