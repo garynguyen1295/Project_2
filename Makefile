@@ -35,6 +35,7 @@ ridge:
 lasso:
 
 pcr:
+	Rscript code/scripts/pcr.R
 
 plsr:
 
