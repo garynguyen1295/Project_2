@@ -25,7 +25,8 @@ eda:
 
 ols:
 
-ridge:
+ridge: data/scaled-credit.csv
+	Rscript code/scripts/ridge.R $(<)
 
 lasso:
 
