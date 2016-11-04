@@ -19,33 +19,38 @@ data:
 tests:
 
 preprocessing: data/Credit.csv
-	Rscript code/scripts/preprocessing.R $(<)
+	Rscript code/scripts/preprocessing_script.R $(<)
 
 # splitting the data set to training and test sets
 splitset: data/scaled_credit.csv
-	Rscript code/scripts/train_test_sets.R $(<)
+	Rscript code/scripts/train_test_script.R $(<)
 
 eda:
 
 ols:
-	Rscript code/scripts/ols.R
+	Rscript code/scripts/ols_script.R
 
 ridge:
-	Rscript code/scripts/ridge.R
+	Rscript code/scripts/ridge_script.R
 
 lasso:
 
 pcr:
-	Rscript code/scripts/pcr.R
+	Rscript code/scripts/pcr_script.R
 
 plsr:
 
 slides:
 
 session:
-	Rscript code/scripts/session-info-script.R
+	Rscript code/scripts/session_info_script.R
 
 clean:
-
+	# rm report/report.pdf
+	rm images/*.png
+	rm data/*.RData
+	rm data/*.txt
+	rm data/*_credit.csv
+	rm session_info.txt
 
 
