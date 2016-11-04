@@ -1,0 +1,17 @@
+Test MSE for OLS model
+[1] 0.04635748
+
+Coefficients of OLS Model(Training Set)
+         Coefficients       Values
+1         (Intercept) -0.005479905
+2              Income -0.610046361
+3               Limit  1.106564320
+4              Rating  0.238743979
+5               Cards  0.059479261
+6                 Age -0.016313100
+7           Education -0.022974615
+8        GenderFemale -0.024346623
+9          StudentYes  0.268593092
+10         MarriedYes -0.005779207
+11     EthnicityAsian  0.018546197
+12 EthnicityCaucasian  0.014403613
