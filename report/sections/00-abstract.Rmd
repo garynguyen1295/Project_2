@@ -1,0 +1,15 @@
+---
+title: "Project 2: Predictive Modeling Process"
+author: "Timothy Park, Gary Nguyen""
+date: "November 4th, 2016"
+
+output: 
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+# Abstract
+Incorporating all the resources learned in Stat 159, we will dive deeper into data analytics by applying more advanced statistical learning methods to model a data set listing credit information of 400 randomly selected individuals. This project will reproduce the methods performed in Chapter 5 and 6 from the textbook, “An Introduction to Statistical Learning” by James et al. These sections cover cross-validation techniques and linear model selection/regularization methods, both of which are necessary in locating the optimal model for a given data set. The credit data set is sourced from the following url: `http://www-bcf.usc.edu/~gareth/ISL/Credit.csv`. Collaborating with a partner was mandatory and allowed us to become more comfortable with Github and Git processes.
+
+
