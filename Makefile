@@ -7,7 +7,7 @@ url = http://www-bcf.usc.edu/~gareth/ISL/Credit.csv
 
 
 # wildcard the section md files
-MDS = $(wildcard report/sections/*.md)
+MDS = $(wildcard report/sections/*.Rmd)
 
 
 # target for reproducing the experiment
@@ -18,7 +18,7 @@ all: eda regressions report
 # report.pdf is also compiled from the Rmd file
 report:
 	cat $(MDS) > report/report.Rmd
-	Rscript -e ‘library(rmarkdown); render(“report/report.Rmd”)’
+	Rscript -e 'library(rmarkdown); render("report/report.Rmd")'
 
 
 # target to download the data set in the the data directory

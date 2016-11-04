@@ -1,2 +1,15 @@
-# Data
+# Methods
+
+## Train and Test Sets
+To split the Credit data set, the `test_split_script.R` was used. In the source code, 300 rows were randomly selected and stored into a csv file called `train_credit.csv`. The remaining 100 rows were written into a csv file called `test_credit.csv`.  The regression models will be trained onto the 300-row data set and their fitted predictions will be measured by how much they deviate compared to the test set.
+
+## Pre-modeling Data Processing
+
+Since the splitted Data sets were still raw, pre-processing techniques were done to properly prepare for modeling. The four categorical variables cannot be interpreted by the model functions in R, so it is better to convert them to numerical values.  The categorical variables with 2 levels can be converted to a dummy variable while the variable with 3 levels such as Ethnicity needs two binary columns or two dummy variables. Using the function `model.matrix` does this automatically, so our data set(s) is converted to a 400 x 12 data frame. 
+
+In addition, the coefficients after fitting each model may be unexpectedly altered by the scaling of each variable. Thus, it is proper to standardize and center each variable columns so that comparisons among each variable are done fairly and that the beta coefficients would not blow up.
+
+## Regression Models
+
+
 
