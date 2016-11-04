@@ -1,174 +1,142 @@
-# Libraries
+# libraries
 library(ggplot2)
 
+# setting argument for Makefile
+args = commandArgs(trailingOnly = TRUE)
+
 # Reading credit data
-setwd(file.path(getwd()))
-credit = read.csv("../../data/Credit.csv", header = TRUE)
-
-
+credit <- read.csv('http://www-bcf.usc.edu/~gareth/ISL/Credit.csv')
 credit <- credit[-1]
-head(credit)
 
 # Descriptive statistics
 # Quantitative: Income, Limit, Rating, Cards, Age, Education, Balance
-sink("../../data/eda-output.txt", append = TRUE)
-cat("\n")
 quants <- c('Income', 'Limit', 'Rating', 'Cards', 'Age', 'Education', 'Balance')
-
 mean_c <- apply(credit[,quants], 2, mean)
-cat('mean of quantitative vars\n')
-print(mean_c)
-cat("\n")
-
 min_c <- apply(credit[,quants], 2, min)
-cat('minimum of quantitative vars\n')
-print(min_c)
-cat("\n")
-
 max_c <- apply(credit[,quants], 2, max)
-cat('maximum of quant vars\n')
-print(max_c)
-cat("\n")
-
 iqr_c <- apply(credit[,quants], 2, IQR)
-cat('IQR of quant vars\n')
-print(iqr_c)
-cat("\n")
-
 sd_c <- apply(credit[,quants], 2, sd)
-cat('Standard dev of quant vars\n')
-print(sd_c)
-cat("\n")
-
 range_c <- apply(credit[,quants], 2, range)
-cat('Range of quant vars\n')
-print(range_c)
-cat("\n")
-
 quantile_c <- apply(credit[,quants], 2, quantile, probs = c(0.25,0.75))
-cat('quantiles of quant vars\n')
-print(quantile_c)
 
-cat("\n")
+# creating a textfile to show all the descriptive statistics of the data set
+sink("data/eda_output.txt")
+cat('Mean of Quantitative Variables\n')
+print(mean_c)
+cat('\nMinimum of Quantitative Variables\n')
+print(min_c)
+cat('\nMaximum of Quantitative Variables\n')
+print(max_c)
+cat('\nIQR of Quantitative Variable\n')
+print(iqr_c)
+cat('\nStandard deviation of Quantitative Variables\n')
+print(sd_c)
+cat('\nRange of Quantitative Variable\n')
+print(range_c)
+cat('\nQuantiles of Quantitative Variable\n')
+print(quantile_c)
 sink()
 
-#Make histograms and box plots or 
-
-path = '../../images/'
+# plotting histograms and box plots for the quantitative variables 
+path = 'images/'
 
 for (index in 1:length(quants)) {
-  png(paste(path, index, '_histogram.png', sep =''))
+  png(paste0(path, tolower(quants[index]), '_histogram.png'))
   quant <- quants[index]
   hist(credit[,quant], main = paste('Histogram of', quant), xlab = paste(quant))
   dev.off()
-  
 }
-
-for (index_1 in 1:length(quants)) {
-  png(paste(path, index_1, '_boxplot.png', sep =''))
-  quant <- quants[index_1]
+for (index in 1:length(quants)) {
+  png(paste0(path, tolower(quants[index]), '_boxplot.png'))
+  quant <- quants[index]
   boxplot(credit[,quant], main = paste('Boxplot of', quant))
   dev.off()
-  
-  }
+}
 
 
-## Make table of frequency and relative frency for qualitative variables
+# making tables of frequencies for qualitative variables
 qualitatives <- c("Gender","Student", "Married", "Ethnicity")
+gender_freq <- table(credit$Gender)
+student_freq <- table(credit$Student)
+married_freq <- table(credit$Married)
+ethnicity_freq <- table(credit$Ethnicity)
 
-## Frequency table (count)
-sink("../../data/eda-output.txt", append = TRUE)
-cat("\n")
-cat('Frequency tables for qualitative variables\n')
-
-Gender_freq <- with(credit, table(Gender))
-print(Gender_freq)
-
-Student_freq  <- with(credit, table(Student))
-print(Student_freq)
-
-Married_freq <- with(credit, table(Married)) 
-print(Married_freq)
-
-Ethnicity_freq <- with(credit, table(Ethnicity))
-print(Ethnicity_freq)
-
-cat('\n')
-sink()
-#Relative frequency tables
-
-sink("../../data/eda-output.txt", append = TRUE)
-cat("\n")
-cat('relative frequency tables for qualitative Vars\n')
-Gender_rel_freq <- prop.table(Gender_freq)
-Student_rel_freq  <- prop.table(Student_freq)
-Married_rel_freq <- prop.table(Married_freq)
-Ethnicity_rel_freq <- prop.table(Ethnicity_freq)
-print(Gender_rel_freq)
-cat("\n")
-print(Student_rel_freq)
-cat("\n")
-print(Married_rel_freq)
-cat("\n")
-print(Ethnicity_rel_freq)
-cat("\n")
+# outputting frequency tables (count) into a textfile
+sink("data/eda_output.txt", append = TRUE)
+cat('\nGender Frequency Table\n')
+print(gender_freq)
+cat('\nStudent Frequency Table\n')
+print(student_freq)
+cat('\nMarried Frequency Table\n')
+print(married_freq)
+cat('\nEthnicity Frequency Table\n')
+print(ethnicity_freq)
 sink()
 
-# Bar charts for proportions
-png(paste(path,'Gender_barplot.png', sep =''))
-barplot(Gender_rel_freq, ylab = "proportion", main = "Relative frequency for Gender") 
-dev.off()
+# making tables of relative frequencies for qualitative variables
+gender_rel_freq <- prop.table(gender_freq)
+student_rel_freq  <- prop.table(student_freq)
+married_rel_freq <- prop.table(married_freq)
+ethnicity_rel_freq <- prop.table(ethnicity_freq)
 
-png(paste(path,'Student_barplot.png', sep =''))
-barplot(Student_rel_freq, ylab = "proportion", main = "Relative frequency for Student" )
-dev.off()
 
-png(paste(path,'Married_barplot.png', sep =''))
-barplot(Married_rel_freq, ylab = "proportion", main = "Relative frequency for Married")
-dev.off()
-
-png(paste(path,'Ethnicity_barplot.png', sep =''))
-barplot(Ethnicity_rel_freq, ylab = "proportion", main = "Relative frequency for Ethnicity")
-dev.off()
-# 
-
-#. matrix of correlations among all quantitative variables.
-  
-  # Correlation among numeric variables in 
-sink("../../data/eda-output.txt", append = TRUE)   
-cat("\n")
-cat('correlation matrix among quantitative variables\n')
-credit_quants <- credit[,-(7:10)]
-x <- credit_quants[1:4]
-y <- credit_quants[5:7]
-cor(x,y)
-cat("\n")
+# outputting relative frequency tables (count) into a textfile
+sink("data/eda_output.txt", append = TRUE)
+cat('\nGender Relative Frequency Table\n')
+print(gender_rel_freq)
+cat('\nStudent Relative Frequency Table\n')
+print(student_rel_freq)
+cat('\nMarried Relative Frequency Table\n')
+print(married_rel_freq)
+cat('\nEthnicity Relative Frequency Table\n')
+print(ethnicity_rel_freq)
 sink()
 
-## . scatterplot matrix. 
-png('../../images/scatterplot_matrix.png')
-pairs(credit_quants, main = "Scatterplot matrix among quantitative variables")
+# plotting barplots measuring the variables' proportions
+png(paste0(path,'gender_barplot.png'))
+barplot(gender_rel_freq, ylab = "Proportion", main = "Relative Frequencies for the Gender Variable") 
 dev.off()
 
-#. anova's between Balance and all the qualitative variables (see function aov()).
-sink("../../data/eda-output.txt", append = TRUE)
-cat("\n")
-credit_qualitatives <- credit[,7:10]
-credit_qualitatives #only qualittative variables
+png(paste0(path,'student_barplot.png'))
+barplot(student_rel_freq, ylab = "Proportion", main = "Relative Frequencies for the Student Variable" )
+dev.off()
 
-fit <- aov(credit$Balance~credit_qualitatives$Gender+credit_qualitatives$Student
-           +credit_qualitatives$Married+credit_qualitatives$Ethnicity)
+png(paste0(path,'married_barplot.png'))
+barplot(married_rel_freq, ylab = "Proportion", main = "Relative Frequencies for the Married Variable")
+dev.off()
 
+png(paste0(path,'ethnicity_barplot.png'))
+barplot(ethnicity_rel_freq, ylab = "Proportion", main = "Relative Frequencies for the Ethnicity Variable")
+dev.off()
+
+# matrix of correlations among all quantitative variables.
+mat_corr <- cor(credit[,quants])
+sink('data/eda_output.txt', append = TRUE)
+cat('\nMatrix of Correlations of the Quantitative Variables\n')
+print(mat_corr)
+sink()
+
+## scatterplot matrix of the quantiative variables
+png('images/scatterplot_matrix.png')
+pairs(credit[,quants], main = "Scatterplot Matrix among Quantitative Variables")
+dev.off()
+
+# Anova between Balance and all the qualitative variables (see function aov()).
+credit_qualitatives <- credit[,c(7:10)]
+fit <- aov(Balance ~ Gender + Student + Married + Ethnicity, 
+           data = credit)
+sink("data/eda_output.txt", append = TRUE)
+cat('\nAnova between Balance and the Qualitative Variables\n')
 print(summary(fit))
-cat("\n")
 sink()
 
-#boxplots conditioning on different variables
+# creating boxplots conditioned on each qualitative variable
 for (index in 1:length(qualitatives)) {
-  png(paste(path,index,'_conditionalBoxplots.png', sep= ''))
+  png(paste0(path,tolower(qualitatives[index]),'_condboxplot.png'))
   qualitative <- credit_qualitatives[,index]
   qualitative_colname <- qualitatives[index]
-  boxplot(credit$Balance~qualitative, main = paste('Boxplot of Balance conditional on', qualitative_colname))
+  boxplot(credit$Balance~qualitative, 
+          main = paste('Boxplot of Balance Conditional on', qualitative_colname))
   dev.off()
   }
     

@@ -1,0 +1,99 @@
+Mean of Quantitative Variables
+    Income      Limit     Rating      Cards        Age  Education    Balance 
+  45.21889 4735.60000  354.94000    2.95750   55.66750   13.45000  520.01500 
+
+Minimum of Quantitative Variables
+   Income     Limit    Rating     Cards       Age Education   Balance 
+   10.354   855.000    93.000     1.000    23.000     5.000     0.000 
+
+Maximum of Quantitative Variables
+   Income     Limit    Rating     Cards       Age Education   Balance 
+  186.634 13913.000   982.000     9.000    98.000    20.000  1999.000 
+
+IQR of Quantitative Variable
+   Income     Limit    Rating     Cards       Age Education   Balance 
+  36.4635 2784.7500  190.0000    2.0000   28.2500    5.0000  794.2500 
+
+Standard deviation of Quantitative Variables
+     Income       Limit      Rating       Cards         Age   Education 
+  35.244273 2308.198848  154.724143    1.371275   17.249807    3.125207 
+    Balance 
+ 459.758877 
+
+Range of Quantitative Variable
+      Income Limit Rating Cards Age Education Balance
+[1,]  10.354   855     93     1  23         5       0
+[2,] 186.634 13913    982     9  98        20    1999
+
+Quantiles of Quantitative Variable
+      Income   Limit Rating Cards   Age Education Balance
+25% 21.00725 3088.00 247.25     2 41.75        11   68.75
+75% 57.47075 5872.75 437.25     4 70.00        16  863.00
+
+Gender Frequency Table
+
+  Male Female 
+   193    207 
+
+Student Frequency Table
+
+ No Yes 
+360  40 
+
+Married Frequency Table
+
+ No Yes 
+155 245 
+
+Ethnicity Frequency Table
+
+African American            Asian        Caucasian 
+              99              102              199 
+
+Gender Relative Frequency Table
+
+  Male Female 
+0.4825 0.5175 
+
+Student Relative Frequency Table
+
+ No Yes 
+0.9 0.1 
+
+Married Relative Frequency Table
+
+    No    Yes 
+0.3875 0.6125 
+
+Ethnicity Relative Frequency Table
+
+African American            Asian        Caucasian 
+          0.2475           0.2550           0.4975 
+
+Matrix of Correlations of the Quantitative Variables
+               Income       Limit      Rating       Cards         Age
+Income     1.00000000  0.79208834  0.79137763 -0.01827261 0.175338403
+Limit      0.79208834  1.00000000  0.99687974  0.01023133 0.100887922
+Rating     0.79137763  0.99687974  1.00000000  0.05323903 0.103164996
+Cards     -0.01827261  0.01023133  0.05323903  1.00000000 0.042948288
+Age        0.17533840  0.10088792  0.10316500  0.04294829 1.000000000
+Education -0.02769198 -0.02354853 -0.03013563 -0.05108422 0.003619285
+Balance    0.46365646  0.86169727  0.86362516  0.08645635 0.001835119
+             Education      Balance
+Income    -0.027691982  0.463656457
+Limit     -0.023548534  0.861697267
+Rating    -0.030135627  0.863625161
+Cards     -0.051084217  0.086456347
+Age        0.003619285  0.001835119
+Education  1.000000000 -0.008061576
+Balance   -0.008061576  1.000000000
+
+Anova between Balance and the Qualitative Variables
+             Df   Sum Sq Mean Sq F value   Pr(>F)    
+Gender        1    38892   38892   0.195    0.659    
+Student       1  5623889 5623889  28.190 1.84e-07 ***
+Married       1    16976   16976   0.085    0.771    
+Ethnicity     2    58038   29019   0.145    0.865    
+Residuals   394 78602117  199498                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

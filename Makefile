@@ -2,7 +2,7 @@ url = http://www-bcf.usc.edu/~gareth/ISL/Credit.csv
 
 all: eda regressions report
 
-.PHONY: all data tests eda ols ridge lasso pcr plsr regressions report slides session clean preprocessing splitset
+.PHONY: all data tests eda ols ridge lasso pcr plsr regressions report slides session clean preprocessing splitset cleanall
 
 report:
 
@@ -25,7 +25,8 @@ preprocessing: data/Credit.csv
 splitset: data/scaled_credit.csv
 	Rscript code/scripts/train_test_script.R $(<)
 
-eda:
+eda: data/Credit.csv
+	Rscript code/scripts/eda_script.R $(<)
 
 ols:
 	Rscript code/scripts/ols_script.R
@@ -45,8 +46,13 @@ slides:
 session:
 	Rscript code/scripts/session_info_script.R
 
+# cleans report output
 clean:
-	# rm report/report.pdf
+	rm report/report.pdf
+
+# cleans all outputs from scripts
+cleanall:
+	rm report/report.pdf
 	rm images/*.png
 	rm data/*.RData
 	rm data/*.txt
