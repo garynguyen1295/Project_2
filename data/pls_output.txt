@@ -1,0 +1,14 @@
+Partial Least Squares
+Best number of components
+[1] 2
+Summary of pls model
+Data: 	X dimension: 100 9 
+	Y dimension: 100 1
+Fit method: kernelpls
+Number of components considered: 2
+TRAINING: % variance explained
+         1 comps  2 comps
+X          17.05    30.04
+Balance    44.07    46.20
+Test MSE
+[1] 1.373919
