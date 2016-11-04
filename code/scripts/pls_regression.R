@@ -4,18 +4,16 @@
 
 library(pls)
 
-source("../functions/regression-functions.R")
-
 # import train and test data
 
-scaled_credit <- read.csv("../../data/scaled-credit.csv", stringsAsFactors=FALSE)
+scaled_credit <- read.csv("../../data/scaled_credit.csv")
 scaled_credit <- scaled_credit[-1]
 
 train <- read.csv("../../data/train_credit.csv", header = TRUE)
 
 train <- train[-1]
 
-test <- read.csv(file = 'data/test_credit.csv')
+test <- read.csv("../../data/test_credit.csv")
 
 test <- test[-1]
 
@@ -67,7 +65,7 @@ plsr_test_mse = mse(plsr_pred,y_test)
 # full model
 
 plsr_full <- plsr(Balance ~., data = test[,-c(2:3)], ncomp = plsr_ncomp)
-summaey(plsr_full)
+summary(plsr_full)
 
 
 # save objects to file
@@ -81,15 +79,15 @@ writeLines("Partial Least Squares")
 
 writeLines("Best number of components")
 
-pls_ncomp_use
+plsr_ncomp_use
 
 writeLines("Summary of pls model")
 
-summary(pls_full)
+summary(plsr_full)
 
 writeLines("Test MSE")
 
-pls_test_mse
+plsr_test_mse
 
 sink()
 
