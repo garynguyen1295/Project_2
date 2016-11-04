@@ -89,9 +89,94 @@ The last two regression models deal with dimension reduction by locating which p
 
 These five regression methods are then compared by their MSEs, and the model with the lowest MSE is considered the best. Other model statistics can be used for comparisons, but for this project, the MSE is the most convenient.
 
-# Data
+# Analysis# Results
 
-# Data
+```{r,echo=FALSE}
+library(xtable)
+options(xtable.comment = FALSE)
+options(knitr.comment = FALSE)
+load('../data/ols_model.RData')
+load('../data/ridge_models.RData')
+load('../data/lasso_models.RData')
+load('../data/pcr_models.RData')
+load('../data/plsr_models.RData')
+load('../data/correlation_matrix.RData')
+source('../code/functions/functions.R')
+```
 
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/age_boxplot.png')
+knitr::include_graphics('../images/age_histogram.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/balance_boxplot.png')
+knitr::include_graphics('../images/balance_histogram.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/cards_boxplot.png')
+knitr::include_graphics('../images/cards_histogram.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/education_boxplot.png')
+knitr::include_graphics('../images/education_histogram.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/income_boxplot.png')
+knitr::include_graphics('../images/income_histogram.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/rating_boxplot.png')
+knitr::include_graphics('../images/rating_histogram.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/limit_boxplot.png')
+knitr::include_graphics('../images/limit_histogram.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/student_condboxplot.png')
+knitr::include_graphics('../images/student_barplot.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/gender_condboxplot.png')
+knitr::include_graphics('../images/gender_barplot.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/ethnicity_condboxplot.png')
+knitr::include_graphics('../images/ethnicity_barplot.png')
+```
+
+```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
+knitr::include_graphics('../images/married_condboxplot.png')
+knitr::include_graphics('../images/married_barplot.png')
+```
+
+```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
+knitr::include_graphics('../images/scatterplot_matrix.png')
+```
+
+```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
+knitr::include_graphics('../images/ridge_cv_errors_plot.png')
+```
+
+```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
+knitr::include_graphics('../images/lasso_cv_errors_plot.png')
+```
+
+```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
+knitr::include_graphics('../images/pcr_cv_errors_plot.png')
+```
+
+```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
+knitr::include_graphics('../images/plsr_cv_errors_plot.png')
+```
 # Data
 

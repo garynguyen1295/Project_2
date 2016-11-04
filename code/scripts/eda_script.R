@@ -116,6 +116,8 @@ cat('\nMatrix of Correlations of the Quantitative Variables\n')
 print(mat_corr)
 sink()
 
+save(mat_corr, file = 'data/correlation_matrix.RData')
+
 ## scatterplot matrix of the quantiative variables
 png('images/scatterplot_matrix.png')
 pairs(credit[,quants], main = "Scatterplot Matrix among Quantitative Variables")

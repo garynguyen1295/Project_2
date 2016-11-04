@@ -20,7 +20,7 @@ plsr_ncomp_use <- which(plsr_ncomp_all[1,]==plsr_PRESS)
 plsr_ncomp <- plsr_ncomp_use[[1]]
 
 #plot cross-validation errors
-png("images/plsr_cv.png")
+png("images/plsr_cv_errors_plot.png")
 validationplot(plsr_cv_out, val.type = "MSEP")
 dev.off()
 
