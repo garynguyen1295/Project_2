@@ -28,6 +28,7 @@ splitset: data/scaled_credit.csv
 eda:
 
 ols:
+	Rscript code/scripts/ols.R
 
 ridge:
 	Rscript code/scripts/ridge.R
