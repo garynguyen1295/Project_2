@@ -59,7 +59,7 @@ best_lasso_coef <- data.frame('Coefficients' = coef_names, 'Values' = coef_value
 
 
 # outputting the best lambda, mse, and coefficients to a textfile
-sink('data/lasso-output.txt')
+sink('data/lasso_output.txt')
 cat('Best lambda for Lasso regression\n')
 print(best_lambda)
 cat('\nTest mean squared error using the best lambda\n')

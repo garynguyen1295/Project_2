@@ -1,23 +1,25 @@
+
 # Data
 
-The Credit data set presents information on elevent different values of 400 bank clients. Of these eleven variables, seven of them are quantitative and the remaining four are qualitative. Below contains brief descriptions of each variable.
+
+The Credit data set presents information on 11 different characteristics of 400 bank accounts. Of these 11 variables, 7 of them are quantitative and the remaining 4 are qualitative. Below contains a brief description of each variable.
 
 **Quantitative**
 
-* Income: customer's income
-* Limit: customer's credit limit
-* Rating: customer's credit rating
-* Cards: number of credit cards
-* Age: customer's age
-* Education: number of years in education
-* Balance: current balance in the customer's bank
+* `Income`: customer's income
+* `Limit`: customer's credit limit
+* `Rating`: customer's credit rating
+* `Cards`: number of credit cards
+* `Age`: customer's age
+* `Education`: number of years in education
+* `Balance`: current balance in the customer's bank
 
 **Qualitative**
 
-* Gender: customer's gender (factor with two levels - Male/Female)
-* Student: customer's current student status (factor with 2 levels - Yes/No)
-* Married: customer's current marital status (factor with 2 levels - Yes/No)
-* Ethnicity: customer's ethnicity (factor with 3 levels - Asian/Caucasian/AfricanAmerican)
+* `Gender`: customer's gender (factor with two levels - Male/Female)
+* `Student`: customer's current student status (factor with 2 levels - Yes/No)
+* `Married`: customer's current marital status (factor with 2 levels - Yes/No)
+* `Ethnicity`: customer's ethnicity (factor with 3 levels - Asian/Caucasian/AfricanAmerican)
 
 For this project, we will see which model we fit will most closely predict with the quantitative variable `Balance`. Thus, we can consider the Balance variable as a response and the other variables as predictors. Since there are 11 variables and 400 customers, the Credit data set has a 400 x 11 dimension. In the next section, in order to assess the accuracy of each regression fit, the Credit data set must be split into two, a training set and a test set.
 
