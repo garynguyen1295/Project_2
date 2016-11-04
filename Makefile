@@ -26,6 +26,13 @@ data:
 	curl -o data/Credit.csv $(url)
 
 
+# target to run download the data, process it, and split the data set
+dataall:
+	make data
+	make preprocessing
+	make splitset
+
+
 # target to run tests of the functions
 tests:
 	Rscript code/test_that.R
@@ -95,7 +102,7 @@ clean:
 	rm report/report.pdf
 
 
-# cleans all outputs from scripts and report target (all scripts should have been used)
+# cleans all outputs from scripts, reports, and data (all scripts should have been used)
 cleanall:
 	rm report/report.pdf
 	rm images/*.png
