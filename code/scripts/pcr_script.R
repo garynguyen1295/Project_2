@@ -12,14 +12,12 @@ test <- test[-1]
 # performing pcr onto the training set with 10 fold CV
 set.seed(1454)
 train_pcr <- pcr(Balance ~ ., data = train, validation = 'CV')
-  
-# saving the models to a RData file in the data directory
-save(train_pcr, file = 'data/pcr_models.RData')
 
 # finding the minimum of the principal components of the coefficients
 comp_values <- train_pcr$validation$PRESS
 index <- which.min(comp_values)
-min_pc <- comp_values[index]
+pcr_ncomp <- index
+min_pc <- comp_values[pcr_ncomp]
 
 # plotting the cv errors of pcr and saving the plot as a png image
 png('images/pcr_cv_errors_plot.png')
@@ -47,3 +45,9 @@ print(pcr_mse)
 cat('\nOfficial coefficients for the optimal model in PCR\n')
 print(best_pcr_coef)
 sink()
+
+
+# saving the models to a RData file in the data directory
+save(train_pcr, pcr_mse, best_pcr_coef, pcr_ncomp, file = 'data/pcr_models.RData')
+
+

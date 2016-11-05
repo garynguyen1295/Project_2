@@ -18,11 +18,9 @@ train_ridge <- cv.glmnet(x = as.matrix(train[,-12]), y = train[,12],
                    intercept = FALSE, standardize = FALSE, alpha = 0, 
                    lambda = grid, nfolds = 10)
 
-# saving the models to a RData file in the data directory
-save(train_ridge, file = 'data/ridge_models.RData')
-
 # finding the best lambda from the models
-best_lambda <- train_ridge$lambda.min
+ridge_lambda <- train_ridge$lambda.min
+best_lambda <- ridge_lambda
 
 # plotting the cv erros of the ridge regression and saving the plot as a png image
 png('images/ridge_cv_errors_plot.png')
@@ -52,9 +50,13 @@ best_ridge_coef <- data.frame('Coefficients' = coef_names, 'Values' = coef_value
 # outputting the best lambda, mse, and coefficients to a textfile
 sink('data/ridge_output.txt')
 cat('Best lambda for ridge regression\n')
-print(best_lambda)
+print(ridge_lambda)
 cat('\nTest mean squared error using the best lambda\n')
 print(ridge_mse)
 cat('\nOfficial coefficients for the optimal model\n')
 print(best_ridge_coef)
 sink()
+
+# saving the models to a RData file in the data directory
+save(train_ridge, best_ridge_coef, ridge_lambda, ridge_mse, file = 'data/ridge_models.RData')
+

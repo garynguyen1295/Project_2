@@ -89,7 +89,9 @@ The last two regression models deal with dimension reduction by locating which p
 
 These five regression methods are then compared by their MSEs, and the model with the lowest MSE is considered the best. Other model statistics can be used for comparisons, but for this project, the MSE is the most convenient.
 
-# Analysis# Results
+
+
+# Analysis
 
 ```{r,echo=FALSE}
 library(xtable)
@@ -104,79 +106,156 @@ load('../data/correlation_matrix.RData')
 source('../code/functions/functions.R')
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/age_boxplot.png')
-knitr::include_graphics('../images/age_histogram.png')
+## Ordinary Least Squares
+
+The first method we consider is fitting an OLS Regression onto the dat set. We output the test MSE for the method and its table of coefficients.
+
+The test MSE is shown below. 
+
+```{r}
+print(ols_mse)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/balance_boxplot.png')
-knitr::include_graphics('../images/balance_histogram.png')
+The table below displays the coefficients for the ols model. 
+
+```{r, echo = FALSE, results = 'asis', message = FALSE}
+library(xtable)
+ols_coef <- data.frame('Coefficients' = names(ols$coefficients),
+                       'Values' = unname(ols$coefficients))
+ols_coefficents = xtable(ols_coef, caption = 'Table of coefficients of each predictor when regressed against Balance',type = "Latex")
+print(ols_coefficents)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/cards_boxplot.png')
-knitr::include_graphics('../images/cards_histogram.png')
+We notice that the coefficients are negative on predictor variables such as `Income`, `Age`, `Education` , `Female` and `Married`. The implication is that these predictors have negative relationships with `Balance`, indicating that an increase in any of these variables results in a decrease in `Balance`
+
+## Lasso Regression
+Lasso regression is performed at this stage. Training data and testing data help us fit the model that determine the lambda value that minimizes the mean-squared error. From this cross-validation, we found the optimal lambda value by locating the minimum of the plot below.
+
+```{r, out.width = "200px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("../images/lasso_cv_errors_plot.png")
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/education_boxplot.png')
-knitr::include_graphics('../images/education_histogram.png')
+The MSE, official coefficients, and best lambda for the lasso regression are shown below.
+```{r}
+paste('Lasso MSE:', lasso_mse)
+paste('Lasso Lambda:', best_lambda)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/income_boxplot.png')
-knitr::include_graphics('../images/income_histogram.png')
+This model is is then run to produce mean-squared errors. We can then predict values for variable `Balance` within some particular range. Finally, we ran the model on our full dataset to produce the model's coefficients.
+
+## Ridge Regression
+Ridge Regression is also performed. The methods used are similar to the ones in Lasso Regression. 
+
+First we fit the model using out training data and cross-validated to determine the lambda value that minimizes mean-squared error. The lambda is found by locating the minimum of the plot below.
+
+```{r, out.width = "200px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("../images/ridge_cv_errors_plot.png")
+```
+To generate the model's MSE values, we used this lambda on our test dataset. Lastly, we ran the model on our full dataset to produce the model's coeficients.
+
+The MSE, official coefficients, and best lambda for the ridge regression are shown below.
+```{r}
+paste('Ridge MSE:', ridge_mse)
+paste('Ridge Lambda:', ridge_lambda)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/rating_boxplot.png')
-knitr::include_graphics('../images/rating_histogram.png')
+## Principle Component Regression (PCR)
+
+Next is the Principle Component Regression method. Our method for fitting a PCR model is similar to our methods for fitting our LASSO and Ridge models.
+
+First, we fit the model using out training data and cross-validate. However,instead of solving for a lambda value, we now solve for the number of components with the smallest Predictive Residual Error Sum of Squares ($PRESS$).
+
+The number of components we generated will explain the most variance in the response and thus will be the best model of all our PCR models.
+
+Fom our cross-validation, we find the optimal number of components by the minimum of the plot below
+
+```{r, out.width = "200px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("../images/pcr_cv_errors_plot.png")
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/limit_boxplot.png')
-knitr::include_graphics('../images/limit_histogram.png')
+The MSE, official coefficients, and optimal number of components for PCR are shown below.
+```{r}
+paste('PCR MSE:', pcr_mse)
+paste('PCR Number of Components:', pcr_ncomp)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/student_condboxplot.png')
-knitr::include_graphics('../images/student_barplot.png')
+Using the number of components generated, we ran the model on the test data  to produce MSE and finally ran the model on our full dataset to produce the model's coefficients.
+
+
+
+## PLSR
+Finally , Partial Least squares Regression is ran.
+
+Similar to PCR, we first fit the model using our training data and cross-validated to determine the optimal number of components by locating the minimum of the plot below.
+
+```{r, out.width = "200px", echo=FALSE, fig.align="center"}
+knitr::include_graphics("../images/plsr_cv_errors_plot.png")
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/gender_condboxplot.png')
-knitr::include_graphics('../images/gender_barplot.png')
+The MSE, official coefficients, and optimal number of components for the PLSR are shown below.
+```{r}
+paste('PLSR MSE:', plsr_test_mse)
+paste('PLSR Number of Components:', plsr_ncomp)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/ethnicity_condboxplot.png')
-knitr::include_graphics('../images/ethnicity_barplot.png')
+Again, with the number of components we have, we ran the model with this number of components on our test data to produce the model's MSE and finally ran the model on our full dataset to produce the model's coeficients.# Results
+
+## Regression coefficients for all methods
+First, we look at the beta's generated from each method.
+
+Because each model we fit uses a different method. The beta coefficients are different for each model. The table belows showcases the difference
+
+#### TABLE OF COEFFICIENTS HERE
+```{r kable, echo=FALSE}
+coefs_df <- data.frame('OLS' = ols_coef,
+                       'Ridge' = best_ridge_coef,
+                       'Lasso' = best_lasso_coef,
+                       'PCR' = best_pcr_coef,
+                       'PLSR' = plsr_coef)
+table(coefs_df)
+```
+####
+
+The effect on the variable `Balance` from each variable with negative coefficient varies for each model. 
+
+In OLS, Lasso, Ridge and PLSR, `Income` has the biggest effect on variabe `Balance`.   
+
+Across the models, `Student:Female` and `Married:Yes` have similar effect on variable `Balance`.
+
+### Official coefficients for different models
+
+we will plot the official coefficients to have a better understanding of how coefficient values differ across models.
+
+###LINE CHART
+``` {r, echo = FALSE}
+par(mar=c(7, 5, 2, 2))
+
+matplot(coefs_df, type = "l", xaxt = "n", ylab = "Coefficient Estimate", col = c(1:5))
+
+axis(1, at = 1:9, labels = row.names(coefs_df), cex.axis = 0.7, las = 2)
+legend("topright", inset=.05, legend=c("OLS", "Lasso", "Ridge", "PCR", "PLSR"), pch=1, col=c(1:5), horiz=FALSE, bty = "n")
+title("Official Coefficients")
+```
+###
+
+As shown in the chart,  coefficients of PCR fluctuate the least and differ from the coefficients yielded by the other models. 
+
+### Comparing MSE values 
+We want to find out which regression technique best predicts 
+values of `Balance`, 
+
+we compare the MSE of the various models.
+
+### TAble of MSE for each regression  technique
+```{r, echo=FALSE}
+kable(mse_df)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/married_condboxplot.png')
-knitr::include_graphics('../images/married_barplot.png')
-```
+###
 
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/scatterplot_matrix.png')
-```
+As shown in the table, we see that  Ridge regression yields minimum MSE.  Ridge regression thererfore model predicts `Balance` within the smallest range of all of our tested models. Because the Ridge regression has the minimum MSE, we conclude that Ridge yield best predictions for `Balance`.
 
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/ridge_cv_errors_plot.png')
-```
 
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/lasso_cv_errors_plot.png')
-```
 
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/pcr_cv_errors_plot.png')
-```
-
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/plsr_cv_errors_plot.png')
-```
-# Data
+# Conclusions
 

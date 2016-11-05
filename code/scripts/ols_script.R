@@ -7,9 +7,6 @@ test <- test[-1]
 # fitting an ols regression onto the training data set
 ols <- lm(Balance ~ ., data = train)
 
-# saving the model to RData output
-save(ols, file = 'data/ols_model.RData')
-
 # finding the coefficients of the fitted model
 ols_coef <- data.frame('Coefficients' = names(ols$coefficients),
                        'Values' = unname(ols$coefficients))
@@ -26,3 +23,10 @@ print(ols_mse)
 cat('\nCoefficients of OLS Model(Training Set)\n')
 print(ols_coef)
 sink()
+
+
+# saving the model to RData output
+save(ols, ols_mse, ols_coef, file = 'data/ols_model.RData')
+
+
+

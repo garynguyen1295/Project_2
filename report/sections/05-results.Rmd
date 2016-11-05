@@ -1,89 +1,59 @@
 # Results
 
-```{r,echo=FALSE}
-library(xtable)
-options(xtable.comment = FALSE)
-options(knitr.comment = FALSE)
-load('../data/ols_model.RData')
-load('../data/ridge_models.RData')
-load('../data/lasso_models.RData')
-load('../data/pcr_models.RData')
-load('../data/plsr_models.RData')
-load('../data/correlation_matrix.RData')
-source('../code/functions/functions.R')
+## Regression coefficients for all methods
+First, we look at the beta's generated from each method.
+
+Because each model we fit uses a different method. The beta coefficients are different for each model. The table belows showcases the difference
+
+#### TABLE OF COEFFICIENTS HERE
+```{r kable, echo=FALSE}
+coefs_df <- data.frame('OLS' = ols_coef,
+                       'Ridge' = best_ridge_coef,
+                       'Lasso' = best_lasso_coef,
+                       'PCR' = best_pcr_coef,
+                       'PLSR' = plsr_coef)
+table(coefs_df)
+```
+####
+
+The effect on the variable `Balance` from each variable with negative coefficient varies for each model. 
+
+In OLS, Lasso, Ridge and PLSR, `Income` has the biggest effect on variabe `Balance`.   
+
+Across the models, `Student:Female` and `Married:Yes` have similar effect on variable `Balance`.
+
+### Official coefficients for different models
+
+we will plot the official coefficients to have a better understanding of how coefficient values differ across models.
+
+###LINE CHART
+``` {r, echo = FALSE}
+par(mar=c(7, 5, 2, 2))
+
+matplot(coefs_df, type = "l", xaxt = "n", ylab = "Coefficient Estimate", col = c(1:5))
+
+axis(1, at = 1:9, labels = row.names(coefs_df), cex.axis = 0.7, las = 2)
+legend("topright", inset=.05, legend=c("OLS", "Lasso", "Ridge", "PCR", "PLSR"), pch=1, col=c(1:5), horiz=FALSE, bty = "n")
+title("Official Coefficients")
+```
+###
+
+As shown in the chart,  coefficients of PCR fluctuate the least and differ from the coefficients yielded by the other models. 
+
+### Comparing MSE values 
+We want to find out which regression technique best predicts 
+values of `Balance`, 
+
+we compare the MSE of the various models.
+
+### TAble of MSE for each regression  technique
+```{r, echo=FALSE}
+kable(mse_df)
 ```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/age_boxplot.png')
-knitr::include_graphics('../images/age_histogram.png')
-```
+###
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/balance_boxplot.png')
-knitr::include_graphics('../images/balance_histogram.png')
-```
+As shown in the table, we see that  Ridge regression yields minimum MSE.  Ridge regression thererfore model predicts `Balance` within the smallest range of all of our tested models. Because the Ridge regression has the minimum MSE, we conclude that Ridge yield best predictions for `Balance`.
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/cards_boxplot.png')
-knitr::include_graphics('../images/cards_histogram.png')
-```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/education_boxplot.png')
-knitr::include_graphics('../images/education_histogram.png')
-```
 
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/income_boxplot.png')
-knitr::include_graphics('../images/income_histogram.png')
-```
-
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/rating_boxplot.png')
-knitr::include_graphics('../images/rating_histogram.png')
-```
-
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/limit_boxplot.png')
-knitr::include_graphics('../images/limit_histogram.png')
-```
-
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/student_condboxplot.png')
-knitr::include_graphics('../images/student_barplot.png')
-```
-
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/gender_condboxplot.png')
-knitr::include_graphics('../images/gender_barplot.png')
-```
-
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/ethnicity_condboxplot.png')
-knitr::include_graphics('../images/ethnicity_barplot.png')
-```
-
-```{r, out.width = "240px", echo=FALSE, message=FALSE, fig.show='hold'}
-knitr::include_graphics('../images/married_condboxplot.png')
-knitr::include_graphics('../images/married_barplot.png')
-```
-
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/scatterplot_matrix.png')
-```
-
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/ridge_cv_errors_plot.png')
-```
-
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/lasso_cv_errors_plot.png')
-```
-
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/pcr_cv_errors_plot.png')
-```
-
-```{r, out.width = "250px", echo=FALSE, message=FALSE, fig.align = 'center'}
-knitr::include_graphics('../images/plsr_cv_errors_plot.png')
-```

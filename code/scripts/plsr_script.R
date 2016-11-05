@@ -32,10 +32,9 @@ plsr_test_mse = mean((plsr_pred - y_test)^2)
 
 # full model
 plsr_full <- plsr(Balance ~., data = test[,-c(2:3)], ncomp = plsr_ncomp)
-summary(plsr_full)
 
-# save objects to file
-save(plsr_cv_out, file = "data/plsr_models.RData")
+# coefficients of plsr model
+plsr_coef <- coef(plsr_full)
 
 #Save output
 sink(file = "data/pls_output.txt")
@@ -47,3 +46,7 @@ summary(plsr_full)
 writeLines("Test MSE")
 plsr_test_mse
 sink()
+
+# save objects to file
+save(plsr_cv_out, plsr_test_mse, plsr_ncomp, plsr_coef,file = "data/plsr_models.RData")
+

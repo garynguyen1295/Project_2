@@ -26,9 +26,6 @@ train_lasso <- cv.glmnet(x = as.matrix(train[,-12]), y = train[,12],
                          intercept = FALSE, standardize = FALSE, alpha = 1, 
                          lambda = grid, nfolds = 10)
 
-# save outputs from 10-fold cv
-save(train_lasso, file = "data/lasso_models.RData")
-
 # finding the best lambda from the models
 best_lambda <- train_lasso$lambda.min
 
@@ -68,3 +65,5 @@ cat('\nOfficial coefficients for the optimal model\n')
 print(best_lasso_coef)
 sink()     
      
+# save outputs in RData
+save(train_lasso, best_lasso_coef, best_lambda, lasso_mse, file = "data/lasso_models.RData")

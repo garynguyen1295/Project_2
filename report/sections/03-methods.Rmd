@@ -44,3 +44,4 @@ The last two regression models deal with dimension reduction by locating which p
 
 These five regression methods are then compared by their MSEs, and the model with the lowest MSE is considered the best. Other model statistics can be used for comparisons, but for this project, the MSE is the most convenient.
 
+
