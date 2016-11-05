@@ -89,7 +89,7 @@ plsr:
 
 # target to produce slides.html from slides.Rmd
 slides:
-	Rscript -e ‘library(rmarkdown); render(“slides/slides.Rmd”)’
+	Rscript -e 'library(rmarkdown); render("slides/slides.Rmd")'
 
 
 # target to produce the session_info.txt output
