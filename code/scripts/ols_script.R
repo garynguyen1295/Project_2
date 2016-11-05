@@ -8,7 +8,8 @@ test <- test[-1]
 ols <- lm(Balance ~ ., data = train)
 
 # finding the coefficients of the fitted model
-ols_coef <- data.frame('Coefficients' = names(ols$coefficients),
+ols_coef <- unname(ols$coefficients)
+ols_coef_df <- data.frame('Coefficients' = names(ols$coefficients),
                        'Values' = unname(ols$coefficients))
 
 # predictions of the test using the model fitted onto training

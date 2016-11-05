@@ -5,18 +5,6 @@ Test mean squared error for PCR
 [1] 0.04635748
 
 Official coefficients for the optimal model in PCR
-, , 11 comps
-
-                        Balance
-Income             -0.598171486
-Limit               0.958438722
-Rating              0.382478949
-Cards               0.052864969
-Age                -0.023033397
-Education          -0.007469459
-GenderFemale       -0.011593092
-StudentYes          0.278154853
-MarriedYes         -0.009054196
-EthnicityAsian      0.015950671
-EthnicityCaucasian  0.011005286
-
+ [1]  0.000000000 -0.598171486  0.958438722  0.382478949  0.052864969
+ [6] -0.023033397 -0.007469459 -0.011593092  0.278154853 -0.009054196
+[11]  0.015950671  0.011005286

@@ -49,8 +49,7 @@ best_lasso <- glmnet(x = as.matrix(scaled_credit[,-12]), y = scaled_credit[,12],
 # Intercept is 0 after standardizing/centering
 best_lasso_coef <- coef(best_lasso)
 coef_names <- best_lasso_coef@Dimnames[[1]]
-coef_values <- seq(0, length.out = length(coef_names))
-coef_values <- coef_values + best_lasso_coef@x
+coef_values <- unname(best_lasso_coef[,1])
 best_lasso_coef <- data.frame('Coefficients' = coef_names, 'Values' = coef_values)
 
 
@@ -66,4 +65,4 @@ print(best_lasso_coef)
 sink()     
      
 # save outputs in RData
-save(train_lasso, best_lasso_coef, best_lambda, lasso_mse, file = "data/lasso_models.RData")
+save(train_lasso, coef_values, best_lambda, lasso_mse, file = "data/lasso_models.RData")

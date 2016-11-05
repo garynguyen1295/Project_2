@@ -16,9 +16,7 @@ source('../code/functions/functions.R')
 
 ## Ordinary Least Squares
 
-The first method we consider is fitting an OLS Regression onto the dat set. We output the test MSE for the method and its table of coefficients.
-
-The test MSE is shown below. 
+The first method we consider is fitting an OLS Regression onto the dat set. We output the test MSE for the method and its table of coefficients. The test MSE is shown below. 
 
 ```{r}
 print(ols_mse)
@@ -44,7 +42,7 @@ knitr::include_graphics("../images/lasso_cv_errors_plot.png")
 ```
 
 The MSE, official coefficients, and best lambda for the lasso regression are shown below.
-```{r}
+```{r, echo = FALSE, message = FALSE}
 paste('Lasso MSE:', lasso_mse)
 paste('Lasso Lambda:', best_lambda)
 ```
@@ -52,37 +50,27 @@ paste('Lasso Lambda:', best_lambda)
 This model is is then run to produce mean-squared errors. We can then predict values for variable `Balance` within some particular range. Finally, we ran the model on our full dataset to produce the model's coefficients.
 
 ## Ridge Regression
-Ridge Regression is also performed. The methods used are similar to the ones in Lasso Regression. 
-
-First we fit the model using out training data and cross-validated to determine the lambda value that minimizes mean-squared error. The lambda is found by locating the minimum of the plot below.
+Ridge Regression is also performed. The methods used are similar to the ones in Lasso Regression. First we fit the model using out training data and cross-validated to determine the lambda value that minimizes mean-squared error. The lambda is found by locating the minimum of the plot below.
 
 ```{r, out.width = "200px", echo=FALSE, fig.align="center"}
 knitr::include_graphics("../images/ridge_cv_errors_plot.png")
 ```
-To generate the model's MSE values, we used this lambda on our test dataset. Lastly, we ran the model on our full dataset to produce the model's coeficients.
-
-The MSE, official coefficients, and best lambda for the ridge regression are shown below.
-```{r}
+To generate the model's MSE values, we used this lambda on our test dataset. Lastly, we ran the model on our full dataset to produce the model's coeficients. The MSE, official coefficients, and best lambda for the ridge regression are shown below.
+```{r, echo = FALSE, message = FALSE}
 paste('Ridge MSE:', ridge_mse)
 paste('Ridge Lambda:', ridge_lambda)
 ```
 
 ## Principle Component Regression (PCR)
 
-Next is the Principle Component Regression method. Our method for fitting a PCR model is similar to our methods for fitting our LASSO and Ridge models.
-
-First, we fit the model using out training data and cross-validate. However,instead of solving for a lambda value, we now solve for the number of components with the smallest Predictive Residual Error Sum of Squares ($PRESS$).
-
-The number of components we generated will explain the most variance in the response and thus will be the best model of all our PCR models.
-
-Fom our cross-validation, we find the optimal number of components by the minimum of the plot below
+Next is the Principle Component Regression method. Our method for fitting a PCR model is similar to our methods for fitting our LASSO and Ridge models. First, we fit the model using out training data and cross-validate. However,instead of solving for a lambda value, we now solve for the number of components with the smallest Predictive Residual Error Sum of Squares ($PRESS$). The number of components we generated will explain the most variance in the response and thus will be the best model of all our PCR models. Fom our cross-validation, we find the optimal number of components by the minimum of the plot below
 
 ```{r, out.width = "200px", echo=FALSE, fig.align="center"}
 knitr::include_graphics("../images/pcr_cv_errors_plot.png")
 ```
 
 The MSE, official coefficients, and optimal number of components for PCR are shown below.
-```{r}
+```{r, echo = FALSE, message = FALSE}
 paste('PCR MSE:', pcr_mse)
 paste('PCR Number of Components:', pcr_ncomp)
 ```
@@ -92,16 +80,14 @@ Using the number of components generated, we ran the model on the test data  to 
 
 
 ## PLSR
-Finally , Partial Least squares Regression is ran.
-
-Similar to PCR, we first fit the model using our training data and cross-validated to determine the optimal number of components by locating the minimum of the plot below.
+Finally , Partial Least squares Regression is run. Similar to PCR, we first fit the model using our training data and cross-validated to determine the optimal number of components by locating the minimum of the plot below.
 
 ```{r, out.width = "200px", echo=FALSE, fig.align="center"}
 knitr::include_graphics("../images/plsr_cv_errors_plot.png")
 ```
 
 The MSE, official coefficients, and optimal number of components for the PLSR are shown below.
-```{r}
+```{r, echo = FALSE, message = FALSE}
 paste('PLSR MSE:', plsr_test_mse)
 paste('PLSR Number of Components:', plsr_ncomp)
 ```

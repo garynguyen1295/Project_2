@@ -35,6 +35,7 @@ best_pcr <- pcr(Balance ~ ., data = scaled_credit, ncomp = index)
 
 # finding the coefficients for the best model
 best_pcr_coef <- coef(best_pcr)
+best_pcr_coef <- c(0,as.vector(coef(best_pcr)))
 
 # outputting the best # of pc, mse, and coefficients to a textfile
 sink('data/pcr_output.txt')

@@ -43,9 +43,8 @@ best_ridge <- glmnet(x = as.matrix(scaled_credit[,-12]), y = scaled_credit[,12],
 # Intercept is 0 after standardizing/centering
 best_ridge_coef <- coef(best_ridge)
 coef_names <- best_ridge_coef@Dimnames[[1]]
-coef_values <- best_ridge_coef@x
-coef_values <- c(0,coef_values)
-best_ridge_coef <- data.frame('Coefficients' = coef_names, 'Values' = coef_values)
+ridge_coef <- unname(best_ridge_coef[,1])
+best_ridge_coef <- data.frame('Coefficients' = coef_names, 'Values' = ridge_coef)
 
 # outputting the best lambda, mse, and coefficients to a textfile
 sink('data/ridge_output.txt')
@@ -58,5 +57,5 @@ print(best_ridge_coef)
 sink()
 
 # saving the models to a RData file in the data directory
-save(train_ridge, best_ridge_coef, ridge_lambda, ridge_mse, file = 'data/ridge_models.RData')
+save(train_ridge, ridge_coef, ridge_lambda, ridge_mse, file = 'data/ridge_models.RData')
 

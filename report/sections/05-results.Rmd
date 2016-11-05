@@ -1,59 +1,59 @@
 # Results
 
 ## Regression coefficients for all methods
-First, we look at the beta's generated from each method.
+First, we look at the beta's generated from each method. Because each model we fit uses a different method. The beta coefficients are different for each model. The table belows showcases the difference
 
-Because each model we fit uses a different method. The beta coefficients are different for each model. The table belows showcases the difference
-
-#### TABLE OF COEFFICIENTS HERE
-```{r kable, echo=FALSE}
+### Table of Coefficients
+```{r, results = 'asis', echo=FALSE}
+library(xtable)
 coefs_df <- data.frame('OLS' = ols_coef,
-                       'Ridge' = best_ridge_coef,
-                       'Lasso' = best_lasso_coef,
+                       'Ridge' = ridge_coef,
+                       'Lasso' = coef_values,
                        'PCR' = best_pcr_coef,
                        'PLSR' = plsr_coef)
-table(coefs_df)
+coefs_table = xtable(coefs_df, caption = 'Table of coefficients for Modeling the Response Balance', digits = 4)
+
+print(coefs_table, caption.placement = 'top', comment = getOption('xtable.comment', FALSE), include.rownames = FALSE)
+
 ```
-####
+* The effect on the variable `Balance` from each variable with a negative coefficient varies for each model. 
+* In OLS, Lasso, Ridge and PLSR, `Income` has the biggest effect on variable `Balance`.
+* Across the models, `Student:Female` and `Married:Yes` have similar effects on variable `Balance`.
 
-The effect on the variable `Balance` from each variable with negative coefficient varies for each model. 
+## Official Coefficients for Different Models
 
-In OLS, Lasso, Ridge and PLSR, `Income` has the biggest effect on variabe `Balance`.   
+We will plot the official coefficients to have a better understanding of how coefficient values differ across models.
 
-Across the models, `Student:Female` and `Married:Yes` have similar effect on variable `Balance`.
-
-### Official coefficients for different models
-
-we will plot the official coefficients to have a better understanding of how coefficient values differ across models.
-
-###LINE CHART
-``` {r, echo = FALSE}
+``` {r, echo = FALSE, warning = FALSE}
 par(mar=c(7, 5, 2, 2))
 
 matplot(coefs_df, type = "l", xaxt = "n", ylab = "Coefficient Estimate", col = c(1:5))
 
-axis(1, at = 1:9, labels = row.names(coefs_df), cex.axis = 0.7, las = 2)
-legend("topright", inset=.05, legend=c("OLS", "Lasso", "Ridge", "PCR", "PLSR"), pch=1, col=c(1:5), horiz=FALSE, bty = "n")
+axis(1, at = 1:12, labels = row.names(coefs_df), cex.axis = 0.7, las = 2)
+ legend("topright", inset=.05, legend=c("OLS", "Lasso", "Ridge", "PCR", "PLSR"), pch=1, col=c(1:5), horiz=FALSE, bty = "n")
 title("Official Coefficients")
 ```
-###
 
 As shown in the chart,  coefficients of PCR fluctuate the least and differ from the coefficients yielded by the other models. 
 
-### Comparing MSE values 
-We want to find out which regression technique best predicts 
-values of `Balance`, 
+## Comparing MSE values 
+We want to find out which regression technique best predicts values of `Balance`. We compare the MSE of the various models in the table below.
 
-we compare the MSE of the various models.
-
-### TAble of MSE for each regression  technique
-```{r, echo=FALSE}
-kable(mse_df)
+### Table of MSE for Each Regression Technique
+```{r, results = 'asis', echo=FALSE, warning = FALSE}
+mse_df <- data.frame('Ols MSE' = ols_mse,
+                     'Ridge MSE' = ridge_mse,
+                     'Lasso MSE' = lasso_mse,
+                     'PCR MSE' = pcr_mse,
+                     'PLSR MSE' = plsr_test_mse)
+mse_tbl <- xtable(mse_df,
+               caption = 'Test Mean Standard Error for Each Regression Method',
+               digits = 5)
+print(mse_tbl, caption.placement = 'top',
+      comment = getOption('xtable.comment', FALSE),
+      include.rownames = FALSE)
 ```
-
-###
-
-As shown in the table, we see that  Ridge regression yields minimum MSE.  Ridge regression thererfore model predicts `Balance` within the smallest range of all of our tested models. Because the Ridge regression has the minimum MSE, we conclude that Ridge yield best predictions for `Balance`.
+As shown in the table, we see that Ridge regression yields the lowest MSE.  Ridge regression thererfore model predicts `Balance` within the smallest range of all of our tested models. Because the Ridge regression has the minimum MSE, we conclude that Ridge yields the best predictions for `Balance`.
 
 
 

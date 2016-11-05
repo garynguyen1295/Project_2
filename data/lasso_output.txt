@@ -5,16 +5,16 @@ Test mean squared error using the best lambda
 [1] 0.0450935
 
 Official coefficients for the optimal model
-         Coefficients     Values
-1         (Intercept) -0.5516606
-2              Income  1.9250468
-3               Limit  2.3678749
-4              Rating  3.0449977
-5               Cards  3.9833400
-6                 Age  5.2668130
-7           Education  5.4483394
-8        GenderFemale  7.9250468
-9          StudentYes  8.3678749
-10         MarriedYes  9.0449977
-11     EthnicityAsian  9.9833400
-12 EthnicityCaucasian 11.2668130
+         Coefficients      Values
+1         (Intercept)  0.00000000
+2              Income -0.55166063
+3               Limit  0.92504680
+4              Rating  0.36787493
+5               Cards  0.04499772
+6                 Age -0.01666003
+7           Education  0.00000000
+8        GenderFemale  0.00000000
+9          StudentYes  0.26681304
+10         MarriedYes  0.00000000
+11     EthnicityAsian  0.00000000
+12 EthnicityCaucasian  0.00000000

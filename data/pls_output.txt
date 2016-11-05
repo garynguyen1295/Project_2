@@ -1,14 +1,17 @@
 Partial Least Squares
 Best number of components
-[1] 2
+[1] 9
 Summary of pls model
-Data: 	X dimension: 100 9 
-	Y dimension: 100 1
+Data: 	X dimension: 400 11 
+	Y dimension: 400 1
 Fit method: kernelpls
-Number of components considered: 2
+Number of components considered: 9
 TRAINING: % variance explained
-         1 comps  2 comps
-X          17.05    30.04
-Balance    44.07    46.20
+         1 comps  2 comps  3 comps  4 comps  5 comps  6 comps  7 comps  8 comps
+X          24.58    32.53    37.84    50.55    60.80    65.92    73.20    76.45
+Balance    69.67    86.53    94.95    95.46    95.48    95.48    95.48    95.50
+         9 comps
+X          81.33
+Balance    95.51
 Test MSE
-[1] 1.373919
+[1] 0.07909502
