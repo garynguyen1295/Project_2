@@ -28,8 +28,12 @@ The table below displays the coefficients for the ols model.
 library(xtable)
 ols_coef <- data.frame('Coefficients' = names(ols$coefficients),
                        'Values' = unname(ols$coefficients))
-ols_coefficents = xtable(ols_coef, caption = 'Table of coefficients of each predictor when regressed against Balance',type = "Latex")
-print(ols_coefficents)
+ols_tbl = xtable(ols_coef, 
+                         caption = 'Table of coefficients of each predictor when regressed against Balance',
+                         digits = 5)
+print(ols_tbl, caption.placement = 'top',
+      comment = getOption('xtable.comment', FALSE),
+      include.rownames = FALSE)
 ```
 
 We notice that the coefficients are negative on predictor variables such as `Income`, `Age`, `Education` , `Female` and `Married`. The implication is that these predictors have negative relationships with `Balance`, indicating that an increase in any of these variables results in a decrease in `Balance`
