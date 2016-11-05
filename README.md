@@ -1,4 +1,5 @@
 # Predictive Modeling Process
+## Author: Timothy Park & Gary Nguyen
 
 The purpose of this project is to extend the scope of a multiple regression analysis to one with many more flexible models, which will cover shrinkage and dimension reduction methods. This analysis will reproduce the regression performed in Chapters 5 and 6 from the book, "An Introduction to Statistical Learning" (by James et al)". To reproduce the experiment, please use the following commands:
 	make cleanall: clean all outputs

@@ -94,6 +94,7 @@ slides:
 
 # target to produce the session_info.txt output
 session:
+	bash session_info.sh
 	Rscript code/scripts/session_info_script.R
 
 
